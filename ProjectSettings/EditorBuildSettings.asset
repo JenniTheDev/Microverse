@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SpeedTap - Jenni's Test.unity
+    guid: d23c18c4962a73c4fb758474d3671fe5
   m_configObjects: {}
