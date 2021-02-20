@@ -25,9 +25,11 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Screen should be rotated");
         Subscribe();
         currentState = GameState.Intro;
+        // Might want to move this stuff to its own method
         startButton.SetActive(true);
         exitToMenuButton.SetActive(false);
         restartGame.SetActive(false);
+        // Show instructions?
         // Start Game Soundtrack
     }
 
