@@ -1,3 +1,4 @@
+// Jenni
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour {
         Subscribe();
         currentState = GameState.Intro;
         startButton.SetActive(true);
+        exitToMenuButton.SetActive(false);
+        restartGame.SetActive(false);
         // Start Game Soundtrack
     }
 
