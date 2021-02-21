@@ -3,15 +3,8 @@ using UnityEngine;
 
 public class StartGameplay : MonoBehaviour
 {
+    public void StartGame() {
+        
+    }
     
-    void Start()
-    {
-        
-    }
-
-   
-    void Update()
-    {
-        
-    }
 }

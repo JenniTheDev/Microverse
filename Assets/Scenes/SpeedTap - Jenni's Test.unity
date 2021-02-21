@@ -149,13 +149,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 75041400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69db666b4c52bfc429bcb6d7754edf42, type: 3}
+  m_Script: {fileID: 11500000, guid: 119ae83b4aab7d941b9c2b550ecb471d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  startButton: {fileID: 158469852}
-  exitToMenuButton: {fileID: 1834963499}
-  restartGame: {fileID: 1156800126}
+  startButton: {fileID: 0}
+  exitToMenuButton: {fileID: 0}
+  restartGame: {fileID: 0}
 --- !u!4 &75041402
 Transform:
   m_ObjectHideFlags: 0
@@ -1183,11 +1183,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1834963499 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1703465528685332949, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
-  m_PrefabInstance: {fileID: 1703465526886849534}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1848761558
 GameObject:
   m_ObjectHideFlags: 0

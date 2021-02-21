@@ -1,7 +1,7 @@
 // Jenni
 using UnityEngine;
 
-public class EventManager {
+public class EventManager : MonoBehaviour {
     #region Singleton
     private static bool isQuitting = false;
     private static EventManager instance = null;
@@ -20,4 +20,25 @@ public class EventManager {
     }
 
     #endregion Singleton
+
+    #region Events and Delegates
+    public delegate void OnAppStartHandler();
+    public event OnAppStartHandler OnAppStart;
+
+    public delegate void OnAppExitHandler();
+    public event OnAppExitHandler OnAppExit;
+
+    #endregion
+
+    #region Class Methods
+
+    public void BroadcastAppStart() {
+        OnAppStart?.Invoke();
+    }
+
+    public void BroadcastAppExit() {
+        OnAppExit?.Invoke();
+    }
+
+    #endregion
 }
