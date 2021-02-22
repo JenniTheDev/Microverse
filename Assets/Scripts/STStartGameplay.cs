@@ -1,7 +1,7 @@
 // Jenni
 using UnityEngine;
 
-public class StartGameplay : MonoBehaviour
+public class STStartGameplay : MonoBehaviour
 {
     public void StartGame() {
         STEventManager.Instance.BroadcastGameStart();
