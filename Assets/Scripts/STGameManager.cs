@@ -56,6 +56,10 @@ public class STGameManager : MonoBehaviour {
         exitToMenuButton.SetActive(true);
         restartGame.SetActive(true);
     }
+    //I probably can remove this method
+    public GameState CurrentGameState() {
+        return currentState;
+    }
 
     private void Subscribe() {
         Unsubscribe();

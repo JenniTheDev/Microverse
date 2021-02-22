@@ -10,16 +10,19 @@ public class STGamePlay : MonoBehaviour {
     private float reactionTime, startTime, randomDelayBeforeMeasuring;
     private bool clockIsTicking, timerCanBeStopped;
     private Touch touch;
+    private bool gameplayStarted = false;
+    
 
     private void Start() {
         Subscribe();
-        // Not sure if this should be here or somewhere else
+        
         
     }
 
     private void Update() {
        // if (touch.phase == TouchPhase.Began) { // this may need to be changed
        // If current state is playing ?
+        if (gameplayStarted) { 
             if (!clockIsTicking) {
                 StartCoroutine("StartMeasuring");
                 gameText.text = "Wait for Green";
@@ -29,7 +32,9 @@ public class STGamePlay : MonoBehaviour {
             } else if (clockIsTicking && timerCanBeStopped) {
                 StopCoroutine("StartMeasuring");
                 reactionTime = Time.time - startTime;
+                gameplayStarted = false;
                 gameText.text = "Reaction time:\n" + reactionTime.ToString("N3") + "sec\n";
+                // STEventManager.Instance.BroadcastGameOver();
                 clockIsTicking = false;
                 STEventManager.Instance.BroadcastGameOver();
             } else if (clockIsTicking && !timerCanBeStopped) {
@@ -37,11 +42,12 @@ public class STGamePlay : MonoBehaviour {
                 reactionTime = 0f;
                 clockIsTicking = false;
                 timerCanBeStopped = true;
+                gameplayStarted = false;
                 gameText.text = "Too Early\n";
                 STEventManager.Instance.BroadcastGameOver();
             }
         }
-   // }
+    }
 
     private void StartGame() {
         reactionTime = 0f;
@@ -50,6 +56,7 @@ public class STGamePlay : MonoBehaviour {
         gameText.text = "Tap to Start";
         clockIsTicking = false;
         timerCanBeStopped = true;
+        gameplayStarted = true;
     }
 
     private IEnumerator StartMeasuring() {
