@@ -16,7 +16,8 @@ public class STGamePlay : MonoBehaviour {
     }
 
     private void Update() {
-        if (touch.phase == TouchPhase.Began) { // this may need to be changed
+       // if (touch.phase == TouchPhase.Began) { // this may need to be changed
+       // If current state is playing ?
             if (!clockIsTicking) {
                 StartCoroutine("StartMeasuring");
                 gameText.text = "Wait for Green";
@@ -38,7 +39,7 @@ public class STGamePlay : MonoBehaviour {
                 STEventManager.Instance.BroadcastGameOver();
             }
         }
-    }
+   // }
 
     private void StartGame() {
         reactionTime = 0f;
