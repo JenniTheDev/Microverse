@@ -1,6 +1,8 @@
+// Jenni
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+
+
 
 public class STGamePlay : MonoBehaviour {
     [SerializeField] private Text gameText;
