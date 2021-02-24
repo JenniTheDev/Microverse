@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b5cc26b36850d41b80534342dd45f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDisplay: {fileID: 0}
+  textDisplay: {fileID: 2017650935}
   secondsLeft: 60
   takingAway: 0
 --- !u!1 &559334976
