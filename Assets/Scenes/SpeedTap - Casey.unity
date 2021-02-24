@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: 0
-  bgColor: {fileID: 0}
+  bgColor: {fileID: 1448958287}
 --- !u!4 &1415093224
 Transform:
   m_ObjectHideFlags: 0
@@ -766,7 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: 0
-  bgColor: {fileID: 0}
+  bgColor: {fileID: 1448958287}
 --- !u!1 &1857957400
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: 0
-  bgColor: {fileID: 0}
+  bgColor: {fileID: 1448958287}
 --- !u!1 &2127714890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,4 +1052,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clicked: 0
-  bgColor: {fileID: 0}
+  bgColor: {fileID: 1448958287}
