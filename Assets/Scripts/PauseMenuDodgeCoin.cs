@@ -1,48 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuDodgeCoin : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    
-    /*
-    // Start is called before the first frame update
+
+  
+
+    // Update is called once per frame
     void Start()
     {
         
     }
 
-    */
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButtonDown("Button_menu"))
-        {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
-        }
-    }
-
-
-    void Resume()
+    //resumes the game
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
     }
 
-    void Pause()
+    //pauses the game
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         GameIsPaused = true;
+    }
+
+    //quits the game
+    public void Quit()
+    {
+        Application.Quit();
     }
 
 
