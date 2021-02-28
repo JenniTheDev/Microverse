@@ -1,53 +1,33 @@
 // Jenni
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Appwide Event Manager")]
+[CreateAssetMenu(menuName = "Scriptables/Appwide Event Manager")]
 public class AppEventManager : ScriptableObject {
 
-    #region Singleton
-    private static bool isQuitting = false;
-    private static AppEventManager instance = null;
-
-    public static AppEventManager Instance {
-        get {
-            if (instance == null && !isQuitting) {
-                instance = new AppEventManager();
-                Application.quitting += () => isQuitting = true;
-            }
-            return instance;
-        }
-    }
-
-    private AppEventManager() {
-    }
-
-    #endregion Singleton
-
     #region Events and Delegates
+
     public delegate void OnAppStartHandler();
+
     public event OnAppStartHandler OnAppStart;
 
     public delegate void OnAppExitHandler();
+
     public event OnAppExitHandler OnAppExit;
 
-    #endregion
+    #endregion Events and Delegates
 
     #region Class Methods
 
     private void Awake() {
-        
     }
 
     private void OnEnable() {
-        
     }
 
     private void OnDisable() {
-        
     }
 
     private void OnDestroy() {
-        
     }
 
     public void BroadcastAppStart() {
@@ -58,9 +38,5 @@ public class AppEventManager : ScriptableObject {
         OnAppExit?.Invoke();
     }
 
-    #endregion
-
-
-
-
+    #endregion Class Methods
 }
