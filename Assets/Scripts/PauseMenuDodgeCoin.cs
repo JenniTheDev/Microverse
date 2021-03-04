@@ -1,24 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuDodgeCoin : MonoBehaviour
 {
+    //Pause menu variables
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public bool isPaused = false;
 
-  
 
-    // Update is called once per frame
+    //Timer variables//
+    /*Reference https://www.youtube.com/watch?v=x-C95TuQtf0 */
+    public Text timerText;
+    public float startTime;
+
+    public string minutes;
+    public string seconds;
+
+    public string pausedMinutes;
+    public string pausedSeconds;
+    public float t;
+    
+    //gets starting time
     void Start()
     {
-        
+        isPaused = false;
+        startTime = Time.time;
     }
+
+    //Updates time when running
+    void Update()
+    {
+        //If paused display paused time else display running time
+        if (isPaused) 
+        {
+            pausedMinutes = minutes;
+            pausedSeconds = seconds;
+            timerText.text = pausedMinutes + ":" + pausedSeconds;
+        }
+        else
+        {
+            t = Time.time - startTime;
+            
+            minutes = ((int)t / 60).ToString();
+            seconds = (t % 60).ToString("f2"); //only prints two leading digits
+            timerText.text = minutes + ":" + seconds;
+        }
+    }
+
+
+
+
 
     //resumes the game
     public void Resume()
     {
+        Time.timeScale = 1;
+        isPaused = false;
+      
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
     }
@@ -26,6 +68,9 @@ public class PauseMenuDodgeCoin : MonoBehaviour
     //pauses the game
     public void Pause()
     {
+        Time.timeScale = 0;
+        isPaused = true;
+    
         pauseMenuUI.SetActive(true);
         GameIsPaused = true;
     }
@@ -35,11 +80,4 @@ public class PauseMenuDodgeCoin : MonoBehaviour
     {
         Application.Quit();
     }
-
-
-
-
 }
-
-
-
