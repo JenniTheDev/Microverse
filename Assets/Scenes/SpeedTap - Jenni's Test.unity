@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119ae83b4aab7d941b9c2b550ecb471d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  currentState: 2
   startButton: {fileID: 158469852}
   exitToMenuButton: {fileID: 1834963499}
   restartGame: {fileID: 1156800126}
