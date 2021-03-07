@@ -1,19 +1,103 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
-using static System.Random;
-
 
 /*
  * Testing working reaction button and results dispay 
  */
 
+/* TODO
+ * Utilize event manager instead of onClicked function. Optimize timer, avoid using the system.diagnostics 
+ * 
+ * 
+ */
 public class STReactionGamePlay : MonoBehaviour
 {
-    public Stopwatch timer = new Stopwatch();
+    [SerializeField] private Text readyText, resultText; 
+    [SerializeField] private SpriteRenderer background;
+    private float reactionTime, startTime, randomDelayBeforeMeasuring;
+    private bool clockIsTicking, timerCanBeStopped;
+    [SerializeField] Button startStopButton; 
+    
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        InitializeVar();
+        startStopButton.onClick.AddListener(WhenButtonisClicked);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+    }
+
+    // Initialize variables at start
+    private void InitializeVar()
+    {
+        reactionTime = 0f;
+        startTime = 0f;
+        randomDelayBeforeMeasuring = 0f;
+        readyText.text = "Click to Start";
+        clockIsTicking = false;
+        timerCanBeStopped = true;
+         
+    }
+
+    public void WhenButtonisClicked()
+    {
+        
+            if (!clockIsTicking)
+            {
+                StartCoroutine(nameof(StartMeasuring));
+                readyText.text = "Wait for Green";
+                resultText.text = "";
+                background.color = Color.red;
+                clockIsTicking = true;
+                timerCanBeStopped = false;
+            }
+            else if (clockIsTicking && timerCanBeStopped)
+            {
+                StopCoroutine(nameof(StartMeasuring));
+                reactionTime = Time.time - startTime;
+                resultText.text = "Reaction time:\n" + reactionTime.ToString("N3") + "sec\n" + "Click to start again";
+                clockIsTicking = false;
+            }
+            else if (clockIsTicking && !timerCanBeStopped)
+            {
+                StopCoroutine(nameof(StartMeasuring));
+                reactionTime = 0f;
+                clockIsTicking = false;
+                timerCanBeStopped = true;
+                resultText.text = "Too early\n" + "Click to start again";
+                
+
+            }
+        
+        
+    }
+
+    private IEnumerator StartMeasuring()
+    {
+        // will wait for delay before starting 
+        randomDelayBeforeMeasuring = Random.Range(0.5f, 3f);
+        yield return new WaitForSeconds(randomDelayBeforeMeasuring);
+        background.color = Color.green;
+        startTime = Time.time;
+        clockIsTicking = true;
+        timerCanBeStopped = true;
+    }
+
+}
+
+
+
+
+/*
+ *  public Stopwatch timer = new Stopwatch();
     private float timeLeft;
     public bool clicked;
     public Image bgColor; 
@@ -87,13 +171,24 @@ public class STReactionGamePlay : MonoBehaviour
         bgColor.GetComponent<Image>().color = Color.green;
     }
 
-   
-}
+    private void StartGame()
+    {
+        
+    }
+
+    private void Subscribe()
+    {
+        Unsubscribe();
+        STEventManager.Instance.OnGameStart += StartGame;
+    }
+
+    private void Unsubscribe()
+    {
+        STEventManager.Instance.OnGameStart -= StartGame;
+    }
+ * 
+ * 
+ */
 
 
-
-
-
-
-    
 
