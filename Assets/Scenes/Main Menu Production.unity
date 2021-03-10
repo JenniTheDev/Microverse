@@ -2531,7 +2531,7 @@ PrefabInstance:
       objectReference: {fileID: 24100000, guid: d51770b101af8c74aad0af1490f7859a, type: 2}
     - target: {fileID: 2064862431692485344, guid: ab5a61f4cdf146340b1b988a96c11435, type: 3}
       propertyPath: parameterName
-      value: Master
+      value: MainVolume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab5a61f4cdf146340b1b988a96c11435, type: 3}
