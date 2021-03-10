@@ -772,7 +772,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: 9a8a232fa5092431c94597ad6874486d, type: 2}
+  m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
@@ -843,6 +843,7 @@ GameObject:
   - component: {fileID: 893948436}
   - component: {fileID: 893948435}
   - component: {fileID: 893948434}
+  - component: {fileID: 893948437}
   m_Layer: 5
   m_Name: DodgeCoinButton
   m_TagString: Untagged
@@ -926,6 +927,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 893948437}
+        m_TargetAssemblyTypeName: ButtonToDodgeCoin, Assembly-CSharp
+        m_MethodName: ChangeToDodgeCoin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &893948435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,6 +977,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893948432}
   m_CullTransparentMesh: 1
+--- !u!114 &893948437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893948432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee8a4dd96161a14795a9f3e5687156f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &966665326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,7 +1370,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: 9a8a232fa5092431c94597ad6874486d, type: 2}
+  m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
@@ -1416,6 +1441,7 @@ GameObject:
   - component: {fileID: 1393324754}
   - component: {fileID: 1393324753}
   - component: {fileID: 1393324752}
+  - component: {fileID: 1393324755}
   m_Layer: 5
   m_Name: SpeedTapButton
   m_TagString: Untagged
@@ -1487,9 +1513,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1177061728}
-        m_TargetAssemblyTypeName: swipe_menu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1393324755}
+        m_TargetAssemblyTypeName: ButtonToSpeedTap, Assembly-CSharp
+        m_MethodName: ChangeToSpeedTap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1537,6 +1563,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393324750}
   m_CullTransparentMesh: 1
+--- !u!114 &1393324755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393324750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89eb826ab152ebd45917ddde2f70d6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1470282482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,7 +1899,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: 9a8a232fa5092431c94597ad6874486d, type: 2}
+  m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
