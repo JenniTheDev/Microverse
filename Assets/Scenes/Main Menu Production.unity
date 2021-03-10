@@ -2648,12 +2648,16 @@ PrefabInstance:
       value: MusicPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 4711122370112342910, guid: 099175eb1af69a04d81600d8f460eedc, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711122370112342910, guid: 099175eb1af69a04d81600d8f460eedc, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: afba916127794fe46a2dfdbdd07fef2d, type: 3}
     - target: {fileID: 4711122370112342910, guid: 099175eb1af69a04d81600d8f460eedc, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24300002, guid: d51770b101af8c74aad0af1490f7859a, type: 2}
+      objectReference: {fileID: 7949144749462466267, guid: d51770b101af8c74aad0af1490f7859a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 099175eb1af69a04d81600d8f460eedc, type: 3}
