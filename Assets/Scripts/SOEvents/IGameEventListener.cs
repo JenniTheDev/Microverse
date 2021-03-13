@@ -1,4 +1,4 @@
-﻿namespace GameEvents.Listeners {
+﻿namespace SOEvents {
 
     public interface IGameEventListener<T> {
 

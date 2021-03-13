@@ -1,9 +1,9 @@
 ﻿// Jenni
 using System.Collections.Generic;
-using GameEvents.Listeners;
+using GameEvents;
 using UnityEngine;
 
-namespace GameEvents.Events {
+namespace SOEvents {
    
     public abstract class BaseGameEvent<T> : ScriptableObject {
         private readonly List<IGameEventListener<T>> listeners = new List<IGameEventListener<T>>();

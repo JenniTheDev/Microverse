@@ -1,8 +1,8 @@
-﻿using GameEvents.Events;
+﻿using GameEvents;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GameEvents.Listeners {
+namespace SOEvents {
     public abstract class BaseGameEventListener<T, E, UER> : MonoBehaviour,
         IGameEventListener<T> where E : BaseGameEvent<T> where UER : UnityEvent<T> {
         [SerializeField] private E gameEvent;
