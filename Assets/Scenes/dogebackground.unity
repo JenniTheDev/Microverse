@@ -199,8 +199,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333577898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.52924, y: 5.2503, z: 0}
-  m_LocalScale: {x: 6.15911, y: 4.9247694, z: 1.432431}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -212,6 +212,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1703465527192835225, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703465527192835225, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 174
+      objectReference: {fileID: 0}
     - target: {fileID: 1703465527655710963, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
       propertyPath: m_fontAsset
       value: 

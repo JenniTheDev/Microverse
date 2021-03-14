@@ -15,6 +15,8 @@ public class PauseMenuDodgeCoin : MonoBehaviour
     //Timer variables//
     /*Reference https://www.youtube.com/watch?v=x-C95TuQtf0 */
     public Text timerText;
+    public Text timeSurvivedText;
+
     public float startTime;
 
     public string minutes;
@@ -22,6 +24,9 @@ public class PauseMenuDodgeCoin : MonoBehaviour
 
     public string pausedMinutes;
     public string pausedSeconds;
+    public string survivedMinutes;
+    public string survivedSeconds;
+
     public float t;
     
     //gets starting time
@@ -37,6 +42,14 @@ public class PauseMenuDodgeCoin : MonoBehaviour
         //If paused display paused time else display running time
         if (isPaused) 
         {
+            //place holder block of code until a dead/game over state is implemented. 
+            //time survived will be paused time
+            survivedMinutes = minutes;
+            survivedSeconds = seconds;
+            timeSurvivedText.text = "You have survived "+ survivedMinutes + ":" + survivedSeconds;
+          
+            //
+
             pausedMinutes = minutes;
             pausedSeconds = seconds;
             timerText.text = pausedMinutes + ":" + pausedSeconds;
