@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace JenniSays {
@@ -7,7 +5,7 @@ namespace JenniSays {
         [SerializeField] private GameState currentState = GameState.None;
         [SerializeField] private GameObject startButton;
         [SerializeField] private GameObject exitToMenuButton;
-        [SerializeField] private GameObject restartGame;
+        [SerializeField] private GameObject game;
 
         public GameState CurrentState {
             get { return this.currentState; }
@@ -21,15 +19,13 @@ namespace JenniSays {
         #region MonoBehavior
 
         private void Start() {
-        
             Subscribe();
             currentState = GameState.Intro;
-            
+
             // something to turn off all the game objects
             startButton.SetActive(true);
             exitToMenuButton.SetActive(false);
-            restartGame.SetActive(false);
-           
+            game.SetActive(false);
         }
 
         private void OnEnable() {
@@ -48,15 +44,14 @@ namespace JenniSays {
             // turn on game objects
             currentState = GameState.Playing;
             startButton.SetActive(false);
-            restartGame.SetActive(false);
             exitToMenuButton.SetActive(false);
+            game.SetActive(true);
         }
 
         public void EndGame() {
             currentState = GameState.GameOver;
             startButton.SetActive(false);
             exitToMenuButton.SetActive(true);
-            restartGame.SetActive(true);
         }
 
         private void Subscribe() {
@@ -68,5 +63,4 @@ namespace JenniSays {
 
         #endregion Methods
     }
-
 }

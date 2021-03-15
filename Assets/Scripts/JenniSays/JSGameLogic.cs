@@ -44,7 +44,7 @@ namespace JenniSays {
             orderToMatch = new List<GameObject>();
             playerChoices = new List<GameObject>();
             gameFailed = false;
-            gameLevel = 10;
+            gameLevel = 1;
             PickOrderToSay();
         }
 
@@ -60,19 +60,23 @@ namespace JenniSays {
             }
         }
 
-        private void PlayerGuesses() {
+        private void IsPlayerCorrect() {
             inputEnabled = true;
-            // for inputs up to level
-            // selected button
-            // On click check button against order to match
-            // if true contiune loop
-            // if false game over
+            for (int i = 0; i < gameLevel; i++) {
+                // player input collected button click listener? Event passing parameter?
+                // player input != to orderToMatch[i];
+                //  return false ;
+            } // return true;
+        }
 
+        private void OnGameButtonClick() {
+            if (!inputEnabled) {
+                return;
+            }
         }
 
         private void AddPlayerGuess() {
             GameObject buttonPushed = GetComponent<GameObject>();
-            
         }
 
         //private bool CheckOrder() {
@@ -104,7 +108,6 @@ namespace JenniSays {
                 ActivateButton(showButton);
                 yield return waitTime;
             }
-            
         }
 
         private void ActivateButton(GameObject selectedButton) {
