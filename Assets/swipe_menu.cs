@@ -29,7 +29,8 @@ public class swipe_menu : MonoBehaviour
         for(int i = 0; i < pos.Length; i++) {
           pos[i] = distance * i;
         }
-        if(Input.GetMouseButton(0)) {
+        // Jenni changed this from on mouse button
+        if(UnityEngine.Input.anyKeyDown) {
           scroll_pos = scrollbar.GetComponent<Scrollbar> ().value;
         } else {
           for(int i = 0; i < pos.Length; i++) {

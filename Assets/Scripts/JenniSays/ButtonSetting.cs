@@ -4,4 +4,5 @@ using UnityEngine;
 public class ButtonSetting : MonoBehaviour {
     private Color normalColor;
     private Color highlightedColor;
+    private AudioClip soundEffect;
 }
