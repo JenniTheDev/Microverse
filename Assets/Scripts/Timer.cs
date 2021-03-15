@@ -8,8 +8,11 @@ using UnityEngine.UI;
  * This scrips takes care of the count down timer that tells the player how long *
  * they must survive.                                                            *
  *********************************************************************************/
+/*
 public class Timer : MonoBehaviour
 {
+    
+
     public GameObject textDisplay;
     public int secondsLeft = 60;
     public bool takingAway = false;
@@ -41,3 +44,4 @@ public class Timer : MonoBehaviour
         takingAway = false;
     }
 }
+    */
