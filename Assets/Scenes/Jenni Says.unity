@@ -407,8 +407,17 @@ MonoBehaviour:
   - {fileID: 262656132}
   orderToMatch: []
   playerChoices: []
-  increasePerLevel: 0
+  maxGameLevel: 50
+  increasePerLevel: 0.5
   buttonAnimation: {fileID: 2097616081}
+  input:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 02a873cf-494d-4d2f-baf7-ea5e3febd81f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
 --- !u!4 &743606309
 Transform:
   m_ObjectHideFlags: 0
@@ -430,6 +439,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330217756}
     m_Modifications:
+    - target: {fileID: -7883238861805054104, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 94ff6556bd95e1d45866efb8e8a82ff6, type: 2}
     - target: {fileID: 121863917913958488, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Name
       value: GameButton 3
@@ -793,6 +806,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330217756}
     m_Modifications:
+    - target: {fileID: -7883238861805054104, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 94ff6556bd95e1d45866efb8e8a82ff6, type: 2}
     - target: {fileID: 121863917913958488, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Name
       value: GameButton 4
@@ -902,6 +919,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330217756}
     m_Modifications:
+    - target: {fileID: -7883238861805054104, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 94ff6556bd95e1d45866efb8e8a82ff6, type: 2}
     - target: {fileID: 121863917913958488, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Name
       value: GameButton 2
@@ -999,6 +1020,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330217756}
     m_Modifications:
+    - target: {fileID: -7883238861805054104, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 94ff6556bd95e1d45866efb8e8a82ff6, type: 2}
     - target: {fileID: 121863917913958488, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Name
       value: GameButton 1
