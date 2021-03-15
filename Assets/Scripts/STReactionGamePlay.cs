@@ -1,3 +1,4 @@
+/*Casey Thatsanaphonh*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,15 +11,20 @@ using UnityEngine.UI;
 /* TODO
  * Utilize event manager instead of onClicked function. Optimize timer, avoid using the system.diagnostics 
  * 
+ * Optimized timer functions and able to get accurate time calculated - Casey 
  * 
+ * 
+ * TODO: 
  */
 public class STReactionGamePlay : MonoBehaviour
 {
     [SerializeField] private Text readyText, resultText; 
     [SerializeField] private SpriteRenderer background;
+    [SerializeField] Button startStopButton;
+    [SerializeField] Camera mainCameraInScene; 
     private float reactionTime, startTime, randomDelayBeforeMeasuring;
     private bool clockIsTicking, timerCanBeStopped;
-    [SerializeField] Button startStopButton; 
+    public Text fastestTime;
     
 
     // Start is called before the first frame update
@@ -26,22 +32,46 @@ public class STReactionGamePlay : MonoBehaviour
     {
         InitializeVar();
         startStopButton.onClick.AddListener(WhenButtonisClicked);
-        
+
+        fastestTime.text = PlayerPrefs.GetFloat("FastestTime", 0.0f).ToString();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        MovingTargetHit();
+        
     }
 
+    private void MovingTargetHit()
+    {
+        // click being detected 
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            Vector3 mousePos = mainCameraInScene.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousepos2D = new Vector2(mousePos.x, mousePos.y);
+
+            RaycastHit2D hit = Physics2D.Raycast(mousepos2D, Vector2.zero);
+
+
+            // this if statement is not working 
+            if (hit.collider != null)
+            {
+                WhenButtonisClicked();
+                //hit.collider.attachedRigidbody.AddForce(Vector2.up);
+            }
+        }
+    }
     // Initialize variables at start
     private void InitializeVar()
     {
         reactionTime = 0f;
         startTime = 0f;
         randomDelayBeforeMeasuring = 0f;
-        readyText.text = "Click to Start";
+        readyText.text = "Click button to Start";
+        resultText.text = "";
         clockIsTicking = false;
         timerCanBeStopped = true;
          
@@ -63,16 +93,25 @@ public class STReactionGamePlay : MonoBehaviour
             {
                 StopCoroutine(nameof(StartMeasuring));
                 reactionTime = Time.time - startTime;
-                resultText.text = "Reaction time:\n" + reactionTime.ToString("N3") + "sec\n" + "Click to start again";
-                clockIsTicking = false;
+                resultText.text = "Reaction time:\n" + reactionTime.ToString("N3") + "sec\n" + "Click button to start again";
+                /*
+                 * TODO: 
+                 * update this to have a button control the restart function 
+                 */
+                clockIsTicking = false;     
+
             }
             else if (clockIsTicking && !timerCanBeStopped)
             {
                 StopCoroutine(nameof(StartMeasuring));
                 reactionTime = 0f;
-                clockIsTicking = false;
+                /*
+                * TODO: 
+                * update this to have a button control the restart function 
+                */
+            clockIsTicking = false;
                 timerCanBeStopped = true;
-                resultText.text = "Too early\n" + "Click to start again";
+                resultText.text = "Too early\n" + "Click Button to start again";
                 
 
             }
