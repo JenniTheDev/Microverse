@@ -59,7 +59,6 @@ namespace JenniSays {
         private void GameOver() {
             // Game Manager Broadcast Game Over
             ResetGame();
-            StartGame(); // This eventually needs to be changed
             Debug.Log("Start Over");
         }
 
