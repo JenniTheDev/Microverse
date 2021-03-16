@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &121863917913958488
+--- !u!1 &6605161601922865551
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1114446360125769615}
-  - component: {fileID: 6783663810083367423}
-  - component: {fileID: 1011927494612861568}
-  - component: {fileID: 1968805460771255910}
-  - component: {fileID: 7824237871169727887}
-  - component: {fileID: 6117233778831050821}
+  - component: {fileID: 7090210603063959622}
+  - component: {fileID: 5804679845645501423}
+  - component: {fileID: 7159308246245204758}
+  - component: {fileID: 3763002149610650967}
+  - component: {fileID: 2610911368459515212}
+  - component: {fileID: 265933478717027443}
   m_Layer: 5
   m_Name: GameButton
   m_TagString: Untagged
@@ -21,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1114446360125769615
+--- !u!224 &7090210603063959622
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121863917913958488}
+  m_GameObject: {fileID: 6605161601922865551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -38,30 +38,30 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6783663810083367423
+--- !u!222 &5804679845645501423
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121863917913958488}
+  m_GameObject: {fileID: 6605161601922865551}
   m_CullTransparentMesh: 1
---- !u!114 &1011927494612861568
+--- !u!114 &7159308246245204758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121863917913958488}
+  m_GameObject: {fileID: 6605161601922865551}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.94853884, g: 0.9622642, b: 0.31318974, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -78,13 +78,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1968805460771255910
+--- !u!114 &3763002149610650967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121863917913958488}
+  m_GameObject: {fileID: 6605161601922865551}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -118,11 +118,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1011927494612861568}
+  m_TargetGraphic: {fileID: 7159308246245204758}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6117233778831050821}
+      - m_Target: {fileID: 265933478717027443}
         m_TargetAssemblyTypeName: JSButton, Assembly-CSharp
         m_MethodName: ActivateButton
         m_Mode: 1
@@ -134,33 +134,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!111 &7824237871169727887
+--- !u!111 &2610911368459515212
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121863917913958488}
+  m_GameObject: {fileID: 6605161601922865551}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 155d8a722d9f7c141a0f3d02e1ec9c18, type: 2}
+  m_Animation: {fileID: 7400000, guid: 8437640aa33b2bd44af0d425cc39f918, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 155d8a722d9f7c141a0f3d02e1ec9c18, type: 2}
+  - {fileID: 7400000, guid: 8437640aa33b2bd44af0d425cc39f918, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &6117233778831050821
+--- !u!114 &265933478717027443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121863917913958488}
+  m_GameObject: {fileID: 6605161601922865551}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bf9d0d27ad58f74fafe9051a41f9079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onButtonClick: {fileID: 11400000, guid: 46ae91e845d570c4d96e67194d2bc5d2, type: 2}
-  buttonAnimation: {fileID: 7824237871169727887}
+  buttonAnimation: {fileID: 2610911368459515212}
