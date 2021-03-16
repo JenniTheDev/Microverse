@@ -89,11 +89,18 @@ namespace JenniSays {
 
         private void NextLevel() {
             Debug.Log("Next Level");
+            PauseBetweenLevels();
             currentIndex = 0;
             gameLevel++;
             currentMode = GameMode.PlayingBack;
             AddRandomButton();
             StartGame();
         }
+
+        private IEnumerator PauseBetweenLevels() {
+            int pauseTime = 5;
+            yield return new WaitForSecondsRealtime(pauseTime);
+        }
     }
 }
+
