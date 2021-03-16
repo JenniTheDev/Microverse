@@ -2589,7 +2589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
   isPaused: 0
-  timerText: {fileID: 0}
+  timerText: {fileID: 254573506}
   timeSurvivedText: {fileID: 0}
   startTime: 0
   minutes: 
