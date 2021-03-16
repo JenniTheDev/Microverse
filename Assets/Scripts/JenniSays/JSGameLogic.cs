@@ -8,42 +8,52 @@ namespace JenniSays {
     public class JSGameLogic : MonoBehaviour {
 
         // List of buttons in the game
-        [SerializeField] private List<GameObject> gameButtons;
+        [SerializeField] private List<JSButton> gameButtons;
 
         // list that is empty, but filled as the computer selects a button
         // maybe these two lists can just be ints?
-        [SerializeField] private List<GameObject> orderToMatch;
+        private List<JSButton> orderToMatch;
 
         // Can't push buttons while the game is playing
         private bool inputEnabled = false;
 
         // inrement after every successful pattern picked
         private int gameLevel = 1;
-
+        [SerializeField] private int intGameLevel;
+        
         [SerializeField] private float speedIncrease = 0.0f;
         [SerializeField] private Animator buttonAnimation;
         [SerializeField] private InputAction input;
 
         private void Start() {
             ResetButtons();
+            AddRandomButtons(intGameLevel);
+            StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
         }
 
         private void Update() {
         }
 
         private void ResetButtons() {
-            orderToMatch = new List<GameObject>();
+            orderToMatch = new List<JSButton>();
             gameLevel = 1;
-            OrderToSay();
+            
         }
 
         private void StartGame() {
             StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
         }
 
-        private void OrderToSay() {
-            int buttonToAdd = UnityEngine.Random.Range(0, gameButtons.Count - 1);
+      
+        private void AddRandomButton() {
+           int buttonToAdd = UnityEngine.Random.Range(0, gameButtons.Count);
             orderToMatch.Add(gameButtons[buttonToAdd]);
+        }
+
+        private void AddRandomButtons(int numToAdd) {
+            for (int i = 0; i < numToAdd; i++) {
+                AddRandomButton();
+            }
         }
 
         private void IsPlayerCorrect() {
@@ -61,19 +71,22 @@ namespace JenniSays {
             }
         }
 
-        private IEnumerator PlayButtonSequence(List<GameObject> buttons, float pauseTime) {
-            inputEnabled = false;
-            GameObject showButton;
+        private IEnumerator PlayButtonSequence(List<JSButton> buttons, float pauseTime) {
+            
+         
             WaitForSeconds waitTime = new WaitForSeconds(pauseTime);
-            for (int i = 0; i < gameLevel; i++) {
-                showButton = buttons[i];
-                ActivateButton(showButton);
+            foreach (var button in buttons) {
+                ActivateButton(button);
                 yield return waitTime;
             }
+             
         }
 
-        private void ActivateButton(GameObject selectedButton) {
-            selectedButton.GetComponent<Animator>().Play("ActiveButton");
+        public void ActivateButton(JSButton selectedButton) {
+            selectedButton.ButtonAnimation.Play();
+           // Debug.Log($"Button {selectedButton.gameObject.name}");
         }
+
+        
     }
 }

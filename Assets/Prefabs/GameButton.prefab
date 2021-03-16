@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6783663810083367423}
   - component: {fileID: 1011927494612861568}
   - component: {fileID: 1968805460771255910}
-  - component: {fileID: -7883238861805054104}
+  - component: {fileID: 7824237871169727887}
+  - component: {fileID: 6117233778831050821}
   m_Layer: 5
   m_Name: GameButton
   m_TagString: Untagged
@@ -96,7 +97,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -120,23 +121,46 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1011927494612861568}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!95 &-7883238861805054104
-Animator:
-  serializedVersion: 3
+      m_Calls:
+      - m_Target: {fileID: 6117233778831050821}
+        m_TargetAssemblyTypeName: JSButton, Assembly-CSharp
+        m_MethodName: ActivateButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!111 &7824237871169727887
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121863917913958488}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 94ff6556bd95e1d45866efb8e8a82ff6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 155d8a722d9f7c141a0f3d02e1ec9c18, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 155d8a722d9f7c141a0f3d02e1ec9c18, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &6117233778831050821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121863917913958488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf9d0d27ad58f74fafe9051a41f9079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onButtonClick: {fileID: 11400000, guid: 46ae91e845d570c4d96e67194d2bc5d2, type: 2}
+  buttonAnimation: {fileID: 7824237871169727887}
