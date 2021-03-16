@@ -1577,6 +1577,7 @@ GameObject:
   - component: {fileID: 893948436}
   - component: {fileID: 893948435}
   - component: {fileID: 893948434}
+  - component: {fileID: 893948437}
   m_Layer: 5
   m_Name: DodgeCoinButton
   m_TagString: Untagged
@@ -1649,9 +1650,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1177061728}
-        m_TargetAssemblyTypeName: swipe_menu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 893948437}
+        m_TargetAssemblyTypeName: ButtonToDodgeCoin, Assembly-CSharp
+        m_MethodName: ChangeToDodgeCoin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2655,6 +2656,7 @@ GameObject:
   - component: {fileID: 1393324754}
   - component: {fileID: 1393324753}
   - component: {fileID: 1393324752}
+  - component: {fileID: 1393324755}
   m_Layer: 5
   m_Name: SpeedTapButton
   m_TagString: Untagged
@@ -2727,9 +2729,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1177061728}
-        m_TargetAssemblyTypeName: swipe_menu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1393324755}
+        m_TargetAssemblyTypeName: ButtonToSpeedTap, Assembly-CSharp
+        m_MethodName: ChangeToSpeedTap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

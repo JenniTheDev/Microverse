@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+// Jenni
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PlayerScore : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
