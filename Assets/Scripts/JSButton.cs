@@ -13,6 +13,5 @@ public class JSButton : MonoBehaviour
 
     public void ActivateButton() {
         onButtonClick.Raise(this);
-
     }
 }

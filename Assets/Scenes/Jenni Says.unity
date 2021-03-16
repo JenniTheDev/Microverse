@@ -436,8 +436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226a4c3e8b5fa4b40b27aa65bf1c2a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intGameLevel: 25
-  speedIncrease: 0.1
+  intGameLevel: 1
+  speedIncrease: 0.5
   gameButtons:
   - {fileID: 367239878}
   - {fileID: 884781336}
@@ -1260,6 +1260,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330217756}
     m_Modifications:
+    - target: {fileID: 2610911368459515212, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6605161601922865551, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Name
       value: GameButton_Center

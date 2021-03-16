@@ -2,55 +2,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace JenniSays {
     public class JSGameLogic : MonoBehaviour {
-        enum GameMode {
+
+        private enum GameMode {
             NONE, PlayingBack, Receiving
         }
 
         [SerializeField]
-        private int intGameLevel;
+        private int gameLevel = 1;
 
         [SerializeField]
         private float speedIncrease = 0.0f;
 
-        // List of buttons in the game
         [SerializeField]
         private List<JSButton> gameButtons;
 
-        // list that is empty, but filled as the computer selects a button
-        // maybe these two lists can just be ints?
         private List<JSButton> orderToMatch;
 
-        // Can't push buttons while the game is playing
-        private bool inputEnabled = false;
-
-        // inrement after every successful pattern picked
-        private int gameLevel = 1;
+        private int currentIndex;
 
         private GameMode currentMode = GameMode.NONE;
 
         private void Start() {
-            ResetButtons();
-            AddRandomButtons(intGameLevel);
+            ResetGame();
+            AddRandomButtons(gameLevel);
             StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
         }
 
         private void Update() {
         }
 
-        private void ResetButtons() {
+        private void ResetGame() {
+            currentMode = GameMode.PlayingBack;
             orderToMatch = new List<JSButton>();
             gameLevel = 1;
-
+            currentIndex = 0;
         }
 
         private void StartGame() {
             StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
         }
-
 
         private void AddRandomButton() {
             int buttonToAdd = UnityEngine.Random.Range(0, gameButtons.Count);
@@ -58,44 +51,50 @@ namespace JenniSays {
         }
 
         private void AddRandomButtons(int numToAdd) {
-            for(int i = 0; i < numToAdd; i++) {
+            for (int i = 0; i < numToAdd; i++) {
                 AddRandomButton();
             }
         }
 
-        private void IsPlayerCorrect() {
-            inputEnabled = true;
-            for(int i = 0; i < gameLevel; i++) {
-                // player input collected button click listener? Event passing parameter?
-                // player input != to orderToMatch[i];
-                //  return false ;
-            } // return true;
-        }
-
-        private void OnGameButtonClick() {
-            if(!inputEnabled) {
-                return;
-            }
+        private void GameOver() {
+            // Game Manager Broadcast Game Over
+            ResetGame();
+            StartGame(); // This eventually needs to be changed
+            Debug.Log("Start Over");
         }
 
         private IEnumerator PlayButtonSequence(List<JSButton> buttons, float pauseTime) {
             currentMode = GameMode.PlayingBack;
             WaitForSeconds waitTime = new WaitForSeconds(pauseTime);
-            foreach(var button in buttons) {
+            foreach (var button in buttons) {
                 ActivateButton(button);
                 yield return waitTime;
             }
-            currentMode = GameMode.NONE;
+            currentMode = GameMode.Receiving;
         }
 
         public void ActivateButton(JSButton selectedButton) {
             selectedButton.ButtonAnimation.Play();
-            if(this.currentMode == GameMode.Receiving) {
-
+            if (this.currentMode == GameMode.Receiving && currentIndex < orderToMatch.Count) {
+                if (selectedButton == orderToMatch[currentIndex]) {
+                    Debug.Log("Match");
+                    currentIndex++;
+                } else {
+                    GameOver();
+                }
             }
-            // Debug.Log($"Button {selectedButton.gameObject.name}");
+            if (currentIndex == orderToMatch.Count && currentIndex != 0) {
+                NextLevel();
+            }
         }
 
-
+        private void NextLevel() {
+            Debug.Log("Next Level");
+            currentIndex = 0;
+            gameLevel++;
+            currentMode = GameMode.PlayingBack;
+            AddRandomButton();
+            StartGame();
+        }
     }
 }
