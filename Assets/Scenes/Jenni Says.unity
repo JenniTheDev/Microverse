@@ -437,6 +437,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameLevel: 1
+  initialLevel: 1
+  resetLevel: 0
   speedIncrease: 2
   gameButtons:
   - {fileID: 367239878}

@@ -12,6 +12,10 @@ namespace JenniSays {
 
         [SerializeField]
         private int gameLevel = 1;
+        [SerializeField]
+        private int initialLevel;
+        [SerializeField]
+        private int resetLevel;
 
         [SerializeField]
         private float speedIncrease = 0.0f;
@@ -22,6 +26,8 @@ namespace JenniSays {
         private List<JSButton> orderToMatch;
 
         private int currentIndex;
+        private float pauseBetweenLevels = 2.0f;
+      
 
         private GameMode currentMode = GameMode.NONE;
 
@@ -37,7 +43,7 @@ namespace JenniSays {
         private void ResetGame() {
             currentMode = GameMode.PlayingBack;
             orderToMatch = new List<JSButton>();
-            gameLevel = 1;
+            gameLevel = initialLevel; 
             currentIndex = 0;
         }
 
@@ -65,6 +71,7 @@ namespace JenniSays {
         private IEnumerator PlayButtonSequence(List<JSButton> buttons, float pauseTime) {
             currentMode = GameMode.PlayingBack;
             WaitForSeconds waitTime = new WaitForSeconds(pauseTime);
+            yield return new WaitForSeconds(pauseBetweenLevels);
             foreach (var button in buttons) {
                 ActivateButton(button);
                 yield return waitTime;
@@ -89,7 +96,6 @@ namespace JenniSays {
 
         private void NextLevel() {
             Debug.Log("Next Level");
-            PauseBetweenLevels();
             currentIndex = 0;
             gameLevel++;
             currentMode = GameMode.PlayingBack;
@@ -97,10 +103,7 @@ namespace JenniSays {
             StartGame();
         }
 
-        private IEnumerator PauseBetweenLevels() {
-            int pauseTime = 5;
-            yield return new WaitForSecondsRealtime(pauseTime);
-        }
+        
     }
 }
 
