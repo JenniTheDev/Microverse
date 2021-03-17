@@ -701,8 +701,8 @@ MonoBehaviour:
   resultText: {fileID: 852881049}
   background: {fileID: 1036016735}
   startStopButton: {fileID: 1801379304}
-  movingTarget: {fileID: 0}
-  mainCameraInScene: {fileID: 0}
+  mainCameraInScene: {fileID: 2022783855}
+  fastestTime: {fileID: 0}
 --- !u!4 &1107378679
 Transform:
   m_ObjectHideFlags: 0
