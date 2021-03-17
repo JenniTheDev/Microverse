@@ -17,7 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/dodgecoin_ui.unity
     guid: 793b4364233fa21459a7d25b5881bdb3
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SpeedTap - Casey.unity
-    guid: 52faf590f4e61e94cb295139fa495f52
+    path: Assets/Scenes/Jenni Says.unity
+    guid: 6058fe4ea2b7ec048bf42e6b50120556
+  - enabled: 1
+    path: Assets/Scenes/SpeedDotGame1.unity
+    guid: 628fb5ff57042574f9d520df4c52499b
+  - enabled: 1
+    path: Assets/Scenes/SpeedTap - Main.unity
+    guid: 1ee755b9d28efad47bd233a13ad21012
+  - enabled: 1
+    path: Assets/Scenes/SpeedTap lvl 2 - Casey.unity
+    guid: e14ee730572cffc44ba635df0d23f75c
   m_configObjects: {}
