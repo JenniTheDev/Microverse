@@ -1577,6 +1577,7 @@ GameObject:
   - component: {fileID: 893948436}
   - component: {fileID: 893948435}
   - component: {fileID: 893948434}
+  - component: {fileID: 893948437}
   m_Layer: 5
   m_Name: DodgeCoinButton
   m_TagString: Untagged
@@ -1649,7 +1650,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 893948437}
         m_TargetAssemblyTypeName: ButtonToDodgeCoin, Assembly-CSharp
         m_MethodName: ChangeToDodgeCoin
         m_Mode: 1
@@ -1660,7 +1661,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &893948435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1699,6 +1700,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893948432}
   m_CullTransparentMesh: 1
+--- !u!114 &893948437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893948432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee8a4dd96161a14795a9f3e5687156f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &926778255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2655,6 +2668,7 @@ GameObject:
   - component: {fileID: 1393324754}
   - component: {fileID: 1393324753}
   - component: {fileID: 1393324752}
+  - component: {fileID: 1393324755}
   m_Layer: 5
   m_Name: SpeedTapButton
   m_TagString: Untagged
@@ -2727,7 +2741,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1393324755}
         m_TargetAssemblyTypeName: ButtonToSpeedTap, Assembly-CSharp
         m_MethodName: ChangeToSpeedTap
         m_Mode: 1
@@ -2777,6 +2791,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393324750}
   m_CullTransparentMesh: 1
+--- !u!114 &1393324755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393324750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89eb826ab152ebd45917ddde2f70d6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1416370818
 GameObject:
   m_ObjectHideFlags: 0
@@ -3727,6 +3753,7 @@ GameObject:
   - component: {fileID: 1842375142}
   - component: {fileID: 1842375141}
   - component: {fileID: 1842375140}
+  - component: {fileID: 1842375143}
   m_Layer: 5
   m_Name: SpeedDotButton
   m_TagString: Untagged
@@ -3799,9 +3826,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1177061728}
-        m_TargetAssemblyTypeName: swipe_menu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1842375143}
+        m_TargetAssemblyTypeName: ButtonToSpeedDot, Assembly-CSharp
+        m_MethodName: ChangeToSpeedDot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3849,6 +3876,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842375138}
   m_CullTransparentMesh: 1
+--- !u!114 &1842375143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842375138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0c9c88608cb9c4d8a0f8377dd75b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1869397262
 GameObject:
   m_ObjectHideFlags: 0
@@ -4074,6 +4113,7 @@ GameObject:
   - component: {fileID: 1889145049}
   - component: {fileID: 1889145048}
   - component: {fileID: 1889145047}
+  - component: {fileID: 1889145050}
   m_Layer: 5
   m_Name: JenniSaysButton
   m_TagString: Untagged
@@ -4146,9 +4186,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1177061728}
-        m_TargetAssemblyTypeName: swipe_menu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1889145050}
+        m_TargetAssemblyTypeName: ButtonToJenniSays, Assembly-CSharp
+        m_MethodName: ChangeToJenniSays
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4196,6 +4236,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889145045}
   m_CullTransparentMesh: 1
+--- !u!114 &1889145050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889145045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e057013a1531d54fbfad43797951dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1940450065
 GameObject:
   m_ObjectHideFlags: 0
