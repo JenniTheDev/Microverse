@@ -206,7 +206,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1688669586}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.42105266
+  m_Size: 0.42105263
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1441,7 +1441,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 480666813}
   m_HandleRect: {fileID: 480666812}
   m_Direction: 2
-  m_Value: 1.0000191
+  m_Value: 1.0000186
   m_Size: 0.7735906
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1661,7 +1661,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &893948435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,6 +1700,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893948432}
   m_CullTransparentMesh: 1
+--- !u!114 &893948437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893948432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee8a4dd96161a14795a9f3e5687156f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &926778255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,7 +2002,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 80447361}
   m_HandleRect: {fileID: 80447360}
   m_Direction: 2
-  m_Value: 1.0000126
+  m_Value: 1.0000123
   m_Size: 0.6928453
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2212,8 +2224,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1978379894}
   m_HandleRect: {fileID: 1978379893}
   m_Direction: 2
-  m_Value: 1.0000126
-  m_Size: 0.6928453
+  m_Value: 1.0000123
+  m_Size: 0.6928452
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2779,6 +2791,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393324750}
   m_CullTransparentMesh: 1
+--- !u!114 &1393324755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393324750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89eb826ab152ebd45917ddde2f70d6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1416370818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,7 +3001,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1525770649}
   m_HandleRect: {fileID: 1525770648}
   m_Direction: 2
-  m_Value: 1.0000191
+  m_Value: 1.0000186
   m_Size: 0.7735906
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3577,6 +3601,7 @@ GameObject:
   - component: {fileID: 1734962092}
   - component: {fileID: 1734962091}
   - component: {fileID: 1734962090}
+  - component: {fileID: 1734962093}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3593,24 +3618,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1734962089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 1511ccae7919cfc46b603b9b337fdc94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 1
 --- !u!114 &1734962091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3640,6 +3650,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1734962093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734962089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &1794499266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3724,6 +3753,7 @@ GameObject:
   - component: {fileID: 1842375142}
   - component: {fileID: 1842375141}
   - component: {fileID: 1842375140}
+  - component: {fileID: 1842375143}
   m_Layer: 5
   m_Name: SpeedDotButton
   m_TagString: Untagged
@@ -3796,9 +3826,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1177061728}
-        m_TargetAssemblyTypeName: swipe_menu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1842375143}
+        m_TargetAssemblyTypeName: ButtonToSpeedDot, Assembly-CSharp
+        m_MethodName: ChangeToSpeedDot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3846,6 +3876,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842375138}
   m_CullTransparentMesh: 1
+--- !u!114 &1842375143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842375138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0c9c88608cb9c4d8a0f8377dd75b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1869397262
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,6 +4113,7 @@ GameObject:
   - component: {fileID: 1889145049}
   - component: {fileID: 1889145048}
   - component: {fileID: 1889145047}
+  - component: {fileID: 1889145050}
   m_Layer: 5
   m_Name: JenniSaysButton
   m_TagString: Untagged
@@ -4143,9 +4186,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1177061728}
-        m_TargetAssemblyTypeName: swipe_menu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1889145050}
+        m_TargetAssemblyTypeName: ButtonToJenniSays, Assembly-CSharp
+        m_MethodName: ChangeToJenniSays
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4193,6 +4236,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889145045}
   m_CullTransparentMesh: 1
+--- !u!114 &1889145050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889145045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e057013a1531d54fbfad43797951dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1940450065
 GameObject:
   m_ObjectHideFlags: 0

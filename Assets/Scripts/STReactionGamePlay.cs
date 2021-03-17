@@ -33,7 +33,7 @@ public class STReactionGamePlay : MonoBehaviour
         InitializeVar();
         startStopButton.onClick.AddListener(WhenButtonisClicked);
 
-        fastestTime.text = PlayerPrefs.GetFloat("FastestTime", 0.0f).ToString();
+        // fastestTime.text = PlayerPrefs.GetFloat("FastestTime", 0.0f).ToString();
        
     }
 
