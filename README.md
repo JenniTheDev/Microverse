@@ -22,11 +22,12 @@ Microverse was created using Unity Version 2020.2.3f1
 
 ## The Team <a name="Team"></a> <br>
 Known in class as "Group F"
-* Brian A. -
-* Brian L. -
-* Casey T. -
-* Dalisa N. -
-* Jenni F. - 
+* Jenni F. - [Portfolio](https://jennithe.dev/) - [Github](www.github.com/JenniTheDev)
+* Brian A. - [Portfolio](https://altbrian379.github.io/) - [Github](https://github.com/AltBrian379)
+* Dalisa N. - [Portfolio] - [Github](https://github.com/DalisaNguyen)
+* Brian L. - [Portfolio] - [Github](https://github.com/BrianLan55)
+* Casey T. - [Portfolio] - [Github](https://github.com/CaseyTea)
+
 
 <br><br>
 
