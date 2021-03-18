@@ -46,6 +46,11 @@ Known in class as "Group F"
   - Shapes increase in difficulty as time goes on
   - Leaderboard will display high scores with times to beat
 
+* JenniSays - A 2D memory game with infinite levels 
+  - Follow what Jenni says and tap the pictures in order
+  - An extra step is added with every level
+  - Leaderboard will display high scores with number to beat
+
 ## Project Documentation <a name="Docs"></a> <br>
 Completed Documentation will be put here
 
