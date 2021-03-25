@@ -4,6 +4,6 @@ using UnityEngine.SceneManagement;
 public class ButtonToJenniSays : MonoBehaviour {
 
     public void ChangeToJenniSays() {
-        SceneManager.LoadScene("JenniSays", LoadSceneMode.Single);
+        SceneManager.LoadScene("Jenni Says", LoadSceneMode.Single);
     }
 }
