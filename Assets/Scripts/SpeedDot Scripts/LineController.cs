@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SpeedDot {
     public class LineController : MonoBehaviour {
-        private List<Transform> pointsToConnect;
+        [SerializeField]private List<Transform> pointsToConnect;
         [SerializeField] private LineRenderer lineBetweenPoints;
 
         private void Start() {

@@ -264,6 +264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4831d02426ac7f04d98620a1ed0e1902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsToConnect:
+  - {fileID: 2018019129}
+  - {fileID: 1825634426}
+  - {fileID: 1407367590}
   lineBetweenPoints: {fileID: 538848587}
 --- !u!114 &538848590
 MonoBehaviour:
