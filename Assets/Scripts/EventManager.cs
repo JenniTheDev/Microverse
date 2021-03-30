@@ -9,15 +9,14 @@ public class EventManager : MonoBehaviour {
     public static EventManager Instance {
         get {
             if (instance == null && !isQuitting) {
-                instance = new EventManager();
+                FindOrCreateInstance();
                 Application.quitting += () => isQuitting = true;
             }
             return instance;
         }
     }
 
-    private EventManager() {
-    }
+    
 
     #endregion Singleton
 
@@ -40,5 +39,18 @@ public class EventManager : MonoBehaviour {
         OnAppExit?.Invoke();
     }
 
+    /// <summary>Looks for an existing instance, if not found creates one. If multiple are found, reports error.</summary>
+    private static void FindOrCreateInstance() {
+        EventManager[] instanceArray = FindObjectsOfType<EventManager>();
+        if (instanceArray.Length == 0) {
+            instance = new GameObject("Event Manager").AddComponent<EventManager>();
+        } else if (instanceArray.Length == 1) {
+            instance = instanceArray[0];
+        } else if (instanceArray.Length > 1) {
+            Debug.LogError($"<color=yellow>Multiple instances of the singleton [EventManager] exists.</color>");
+            Debug.Break();
+        }
+        DontDestroyOnLoad(instance);
+    }
     #endregion
 }
