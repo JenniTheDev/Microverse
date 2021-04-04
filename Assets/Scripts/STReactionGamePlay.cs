@@ -25,13 +25,14 @@ public class STReactionGamePlay : MonoBehaviour
     private float reactionTime, startTime, randomDelayBeforeMeasuring;
     private bool clockIsTicking, timerCanBeStopped;
     public Text fastestTime;
-    
+    public SpeedTapScoresLevel1 score;
 
     // Start is called before the first frame update
     void Start()
     {
         InitializeVar();
         startStopButton.onClick.AddListener(WhenButtonisClicked);
+        
 
         // fastestTime.text = PlayerPrefs.GetFloat("FastestTime", 0.0f).ToString();
        
@@ -130,104 +131,22 @@ public class STReactionGamePlay : MonoBehaviour
         timerCanBeStopped = true;
     }
 
+    private void SaveHighScore(float value)
+    {
+        if (score.highScore1 < value)
+        {
+            // save score to json 
+        }
+        else if (score.highScore2 < value)
+        {
+            // save score to json
+        }
+        else if (score.highScore3 < value)
+        {
+            // save score to json
+        }
+
+        // if the value is not greater than highscore 3 then it should not be added 
+    }
+
 }
-
-
-
-
-/*
- *  public Stopwatch timer = new Stopwatch();
-    private float timeLeft;
-    public bool clicked;
-    public Image bgColor; 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        GenerateRandomNumber();
-        clicked = false;
-        ChangeBGRed();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // when 0 the timer will start 
-        Countdown();
-
-       
-        
-    }
-
-    private static float GenerateRandomNumber()
-    {
-        System.Random rng = new System.Random();
-        float rand = (float)rng.Next(5, 6);
-        return rand;
-
-    }
-    
-    public void UpdateReactionTime()
-    {
-       
-        TimeSpan timepass = timer.Elapsed;
-        string timeString = String.Format("{000}" + "  MS", timepass.Milliseconds);
-
-        Text reactionTime = GameObject.Find("ResultsText").GetComponent<Text>();
-        reactionTime.text = timeString;
-
-        timer.Stop();
-        UnityEngine.Debug.Log(timepass);
-    }
-   
-    private void Countdown()
-    {
-        if (timeLeft >= 0)
-        {
-            timeLeft -= Time.deltaTime;
-        }
-        else
-        {
-            timer.Start();
-            ChangeBGGreen();
-
-        }
-    }
-
-    public void ButtonClicked()
-    {
-        clicked = true;
-        timer.Stop();
-    }
-
-    public void ChangeBGRed()
-    {
-        bgColor.GetComponent<Image>().color = Color.red; 
-    }
-
-    public void ChangeBGGreen()
-    {
-        bgColor.GetComponent<Image>().color = Color.green;
-    }
-
-    private void StartGame()
-    {
-        
-    }
-
-    private void Subscribe()
-    {
-        Unsubscribe();
-        STEventManager.Instance.OnGameStart += StartGame;
-    }
-
-    private void Unsubscribe()
-    {
-        STEventManager.Instance.OnGameStart -= StartGame;
-    }
- * 
- * 
- */
-
-
-
