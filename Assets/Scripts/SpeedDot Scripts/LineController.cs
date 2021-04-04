@@ -29,6 +29,7 @@ namespace SpeedDot {
         
 
         private void DrawLines() {
+            lineBetweenPoints.positionCount = pointsToConnect.Count;
             for (int i = 0; i < pointsToConnect.Count; i++) {
                 lineBetweenPoints.SetPosition(i, pointsToConnect[i].position);
             }
