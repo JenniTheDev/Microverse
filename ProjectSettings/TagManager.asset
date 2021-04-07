@@ -50,3 +50,6 @@ TagManager:
   - name: Lines
     uniqueID: 2693509837
     locked: 0
+  - name: coin
+    uniqueID: 1410325691
+    locked: 0
