@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8950482956520551524}
   - component: {fileID: 4170449555867634806}
   - component: {fileID: 353037204}
+  - component: {fileID: 7967674140102820620}
   m_Layer: 0
   m_Name: SpeedDot
   m_TagString: Untagged
@@ -109,3 +110,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onClick: {fileID: 11400000, guid: 26b712647172e0e4e849509977e6258f, type: 2}
+  dotAnimation: {fileID: 7967674140102820620}
+--- !u!111 &7967674140102820620
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9159274144300569314}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 8437640aa33b2bd44af0d425cc39f918, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8437640aa33b2bd44af0d425cc39f918, type: 2}
+  - {fileID: 7400000, guid: 8437640aa33b2bd44af0d425cc39f918, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
