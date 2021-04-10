@@ -20,8 +20,10 @@ public class spawnCoins : MonoBehaviour
     // Update is called once per frame
     public void SpawnCoin()
     {
+        
         Instantiate(spawnee, transform.position, transform.rotation);
-        if(stopSpawning)
+        
+        if (stopSpawning)
         {
             CancelInvoke("SpawnCoin");
         }

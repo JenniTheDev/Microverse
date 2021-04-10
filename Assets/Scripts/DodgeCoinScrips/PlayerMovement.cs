@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D col)
    
     {
-        if (col.gameObject.tag == "coin");
+        if (this.gameObject.tag== "Player" && col.gameObject.tag == "coin");
         {
             collided = true;
         }
