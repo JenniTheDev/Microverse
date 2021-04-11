@@ -1564,7 +1564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameLevel: 0
-  initialLevel: 2
+  initialLevel: 6
   resetLevel: 0
   speedIncrease: 1
   gameDots:

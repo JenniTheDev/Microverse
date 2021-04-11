@@ -27,7 +27,7 @@ namespace SpeedDot {
         private List<SpeedDot> orderToMatch;
 
         private int currentIndex;
-        private float pauseBetweenLevels = 2.0f;
+        private float pauseBetweenLevels = 1.5f;
 
         private GameMode currentMode = GameMode.NONE;
 
@@ -45,6 +45,10 @@ namespace SpeedDot {
             orderToMatch = new List<SpeedDot>();
             gameLevel = initialLevel;
             currentIndex = 0;
+            foreach (var dot in orderToMatch) {
+                dot.gameObject.SetActive(false);
+
+            }
         }
 
         private void StartGame() {
@@ -53,7 +57,12 @@ namespace SpeedDot {
 
         private void AddRandomDot() {
             int buttonToAdd = UnityEngine.Random.Range(0, gameDots.Count);
-            orderToMatch.Add(gameDots[buttonToAdd]);
+            if (orderToMatch.Contains(gameDots[buttonToAdd])) {
+                AddRandomDot();
+            } else {
+                orderToMatch.Add(gameDots[buttonToAdd]);
+            }
+            // orderToMatch.Add(gameDots[buttonToAdd]);
         }
 
         private void AddRandomDots(int numToAdd) {
@@ -81,6 +90,7 @@ namespace SpeedDot {
 
         public void ActivateDot(SpeedDot selectedDot) {
             selectedDot.DotAnimation.Play();
+            selectedDot.gameObject.SetActive(true);
             if (this.currentMode == GameMode.Receiving && currentIndex < orderToMatch.Count) {
                 if (selectedDot == orderToMatch[currentIndex]) {
                     Debug.Log("Match");
