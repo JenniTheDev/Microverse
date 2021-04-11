@@ -31,6 +31,8 @@ public class STReactionGamePlay : MonoBehaviour
     void Start()
     {
         InitializeVar();
+
+        // run this line if lvl 1 
         startStopButton.onClick.AddListener(WhenButtonisClicked);
         
 
@@ -41,6 +43,7 @@ public class STReactionGamePlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // run function if lvl 2
         MovingTargetHit();
         
     }
