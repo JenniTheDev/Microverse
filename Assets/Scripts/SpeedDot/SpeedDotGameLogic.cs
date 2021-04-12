@@ -24,7 +24,7 @@ namespace SpeedDot {
         [SerializeField]
         private List<SpeedDot> gameDots;
 
-        private List<SpeedDot> orderToMatch;
+        private List<SpeedDot> dotsToConnect;
 
         private int currentIndex;
         private float pauseBetweenLevels = 1.5f;
@@ -34,7 +34,7 @@ namespace SpeedDot {
         private void Start() {
             ResetGame();
             AddRandomDots(gameLevel);
-            StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
+            StartCoroutine(PlayButtonSequence(dotsToConnect, speedIncrease));
         }
 
         private void Update() {
@@ -42,25 +42,24 @@ namespace SpeedDot {
 
         private void ResetGame() {
             currentMode = GameMode.PlayingBack;
-            orderToMatch = new List<SpeedDot>();
+            dotsToConnect = new List<SpeedDot>();
             gameLevel = initialLevel;
-            currentIndex = 0;
-            foreach (var dot in orderToMatch) {
+            currentIndex = 1;  // not sure if this should stay at 1
+            foreach (var dot in gameDots) {
                 dot.gameObject.SetActive(false);
-
             }
         }
 
         private void StartGame() {
-            StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
+            StartCoroutine(PlayButtonSequence(dotsToConnect, speedIncrease));
         }
 
         private void AddRandomDot() {
             int buttonToAdd = UnityEngine.Random.Range(0, gameDots.Count);
-            if (orderToMatch.Contains(gameDots[buttonToAdd])) {
+            if (dotsToConnect.Contains(gameDots[buttonToAdd])) {
                 AddRandomDot();
             } else {
-                orderToMatch.Add(gameDots[buttonToAdd]);
+                dotsToConnect.Add(gameDots[buttonToAdd]);
             }
             // orderToMatch.Add(gameDots[buttonToAdd]);
         }
@@ -91,15 +90,17 @@ namespace SpeedDot {
         public void ActivateDot(SpeedDot selectedDot) {
             selectedDot.DotAnimation.Play();
             selectedDot.gameObject.SetActive(true);
-            if (this.currentMode == GameMode.Receiving && currentIndex < orderToMatch.Count) {
-                if (selectedDot == orderToMatch[currentIndex]) {
-                    Debug.Log("Match");
+            if (this.currentMode == GameMode.Receiving && currentIndex < dotsToConnect.Count) {
+                // check if all dots are clicked
+               // AreAllDotsClicked();
+                //if (selectedDot == dotsToConnect[currentIndex]) {
+                //    Debug.Log("Match");
                     currentIndex++;
-                } else {
-                    GameOver();
-                }
+                //} else {
+                //    GameOver();
+                //} 
             }
-            if (currentIndex == orderToMatch.Count && currentIndex != 0) {
+            if (currentIndex == dotsToConnect.Count && currentIndex != 0 && AreAllDotsClicked()) {
                 NextLevel();
             }
         }
@@ -109,8 +110,22 @@ namespace SpeedDot {
             currentIndex = 0;
             gameLevel++;
             currentMode = GameMode.PlayingBack;
+            // Set game objects to false
             AddRandomDot();
             StartGame();
+        }
+
+        private bool AreAllDotsClicked() {
+            foreach (var dot in dotsToConnect) {
+                if (dot.HasBeenClicked == false) {
+                    Debug.Log("All dots not clicked");
+                    return false;
+                }
+                // Needs a way to return true if all are true   
+
+            }
+            Debug.Log("All dots clicked");
+            return true;
         }
     }
 }

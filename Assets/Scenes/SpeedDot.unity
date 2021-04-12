@@ -1530,6 +1530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689404879}
   - component: {fileID: 1689404880}
+  - component: {fileID: 1689404881}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -1590,6 +1591,34 @@ MonoBehaviour:
   - {fileID: 281249936}
   - {fileID: 1591182859}
   - {fileID: 1188125421}
+--- !u!114 &1689404881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689404878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d1e9f4b5a596c43931c69d55a05ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 26b712647172e0e4e849509977e6258f, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1689404880}
+        m_TargetAssemblyTypeName: SpeedDot.SpeedDotGameLogic, Assembly-CSharp
+        m_MethodName: ActivateDot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1767076543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5667891047026595551, guid: 98b0cfd382b4c2b4fa7b4350b7bf8b30, type: 3}
