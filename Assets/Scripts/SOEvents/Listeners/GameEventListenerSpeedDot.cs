@@ -6,5 +6,5 @@ namespace SOEvents.Listeners {
         : BaseGameEventListener<
             SpeedDot.SpeedDot,
             GameEventSpeedDot,
-            UnityEvent<SpeedDot.SpeedDot>> {}
+            UnityEvent<SpeedDot.SpeedDot>> { }
 }
