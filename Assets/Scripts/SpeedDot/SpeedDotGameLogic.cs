@@ -23,6 +23,9 @@ namespace SpeedDot {
 
         private List<SpeedDot> dotsToConnect;
 
+        [SerializeField]
+        private LineRenderer lineRenderer;
+
         private int currentIndex;
         private float pauseBetweenLevels = 1.5f;
 
@@ -98,6 +101,7 @@ namespace SpeedDot {
             gameLevel++;
             currentMode = GameMode.PlayingBack;
             ResetDots();
+           // Line Renderer clear list, set list size to 0
             dotsToConnect.Clear();
             AddRandomDots(gameLevel);
             StartGame();
