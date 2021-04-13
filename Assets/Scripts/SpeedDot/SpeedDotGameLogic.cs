@@ -90,7 +90,7 @@ namespace SpeedDot {
                 currentIndex++;
             }
 
-            if (currentIndex == dotsToConnect.Count && currentIndex != 0) {
+            if (currentIndex == dotsToConnect.Count && currentIndex != 0 && AreAllDotsClicked()) {
                 NextLevel(); // This is wrong, should check if all are false
             }
         }
