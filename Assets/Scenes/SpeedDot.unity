@@ -1564,9 +1564,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40eabc903d2121419a13595203341c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLevel: 0
-  initialLevel: 6
-  resetLevel: 0
+  gameLevel: 1
+  initialLevel: 2
   speedIncrease: 1
   gameDots:
   - {fileID: 3270627900517534714}

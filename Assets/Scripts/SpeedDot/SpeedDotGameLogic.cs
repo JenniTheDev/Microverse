@@ -16,9 +16,6 @@ namespace SpeedDot {
         private int initialLevel;
 
         [SerializeField]
-        private int resetLevel;
-
-        [SerializeField]
         private float speedIncrease = 0.0f;
 
         [SerializeField]
@@ -44,10 +41,8 @@ namespace SpeedDot {
             currentMode = GameMode.PlayingBack;
             dotsToConnect = new List<SpeedDot>();
             gameLevel = initialLevel;
-            currentIndex = 1;  // not sure if this should stay at 1
-            foreach (var dot in gameDots) {
-                dot.gameObject.SetActive(false);
-            }
+            currentIndex = 0;
+            ResetDots();
         }
 
         private void StartGame() {
@@ -61,7 +56,6 @@ namespace SpeedDot {
             } else {
                 dotsToConnect.Add(gameDots[buttonToAdd]);
             }
-            // orderToMatch.Add(gameDots[buttonToAdd]);
         }
 
         private void AddRandomDots(int numToAdd) {
@@ -88,20 +82,13 @@ namespace SpeedDot {
         }
 
         public void ActivateDot(SpeedDot selectedDot) {
-            selectedDot.DotAnimation.Play();
             selectedDot.gameObject.SetActive(true);
             if (this.currentMode == GameMode.Receiving && currentIndex < dotsToConnect.Count) {
-                // check if all dots are clicked
-               // AreAllDotsClicked();
-                //if (selectedDot == dotsToConnect[currentIndex]) {
-                //    Debug.Log("Match");
-                    currentIndex++;
-                //} else {
-                //    GameOver();
-                //} 
+                currentIndex++;
             }
-            if (currentIndex == dotsToConnect.Count && currentIndex != 0 && AreAllDotsClicked()) {
-                NextLevel();
+
+            if (currentIndex == dotsToConnect.Count && currentIndex != 0) {
+                NextLevel(); // This is wrong, should check if all are false
             }
         }
 
@@ -110,8 +97,9 @@ namespace SpeedDot {
             currentIndex = 0;
             gameLevel++;
             currentMode = GameMode.PlayingBack;
-            // Set game objects to false
-            AddRandomDot();
+            ResetDots();
+            dotsToConnect.Clear();
+            AddRandomDots(gameLevel);
             StartGame();
         }
 
@@ -121,11 +109,15 @@ namespace SpeedDot {
                     Debug.Log("All dots not clicked");
                     return false;
                 }
-                // Needs a way to return true if all are true   
-
             }
             Debug.Log("All dots clicked");
             return true;
+        }
+
+        private void ResetDots() {
+            foreach (var dot in gameDots) {
+                dot.gameObject.SetActive(false);
+            }
         }
     }
 }
