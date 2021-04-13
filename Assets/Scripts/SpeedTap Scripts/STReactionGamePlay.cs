@@ -3,19 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
 
-/*
- * Testing working reaction button and results dispay 
- */
 
-/* TODO
- * Utilize event manager instead of onClicked function. Optimize timer, avoid using the system.diagnostics 
- * 
- * Optimized timer functions and able to get accurate time calculated - Casey 
- * 
- * 
- * TODO: 
- */
+
+
+
 public class STReactionGamePlay : MonoBehaviour
 {
     [SerializeField] private Text readyText, resultText; 
@@ -24,15 +17,27 @@ public class STReactionGamePlay : MonoBehaviour
     [SerializeField] Camera mainCameraInScene; 
     private float reactionTime, startTime, randomDelayBeforeMeasuring;
     private bool clockIsTicking, timerCanBeStopped;
+    private Scene currentLevel; 
     public Text fastestTime;
-    
+    public SpeedTapScoresLevel1 score;
+
+    private const string lvl1 = "SpeedTapLevel1", lvl2 = "SpeedTapLevel2";
+
 
     // Start is called before the first frame update
     void Start()
     {
         InitializeVar();
-        startStopButton.onClick.AddListener(WhenButtonisClicked);
 
+        
+        // run this line if lvl 1 
+        if (currentLevel.name == lvl1)
+        {
+            startStopButton.onClick.AddListener(WhenButtonisClicked);
+        }
+        
+       
+       
         // fastestTime.text = PlayerPrefs.GetFloat("FastestTime", 0.0f).ToString();
        
     }
@@ -40,7 +45,22 @@ public class STReactionGamePlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovingTargetHit();
+        // run function if lvl 2
+        if (currentLevel.name == lvl2)
+        {
+            MovingTargetHit();
+
+           /* if(PauseMenu.GameIsPaused)
+            {
+                //movingTarget.SetActive(false);
+                
+            }
+            else
+            {
+                //movingTarget.SetActive(true);
+                
+            }*/
+        }
         
     }
 
@@ -74,6 +94,9 @@ public class STReactionGamePlay : MonoBehaviour
         resultText.text = "";
         clockIsTicking = false;
         timerCanBeStopped = true;
+
+        currentLevel = SceneManager.GetActiveScene();
+        Debug.Log(currentLevel.name);
          
     }
 
@@ -94,10 +117,7 @@ public class STReactionGamePlay : MonoBehaviour
                 StopCoroutine(nameof(StartMeasuring));
                 reactionTime = Time.time - startTime;
                 resultText.text = "Reaction time:\n" + reactionTime.ToString("N3") + "sec\n" + "Click button to start again";
-                /*
-                 * TODO: 
-                 * update this to have a button control the restart function 
-                 */
+          
                 clockIsTicking = false;     
 
             }
@@ -105,10 +125,7 @@ public class STReactionGamePlay : MonoBehaviour
             {
                 StopCoroutine(nameof(StartMeasuring));
                 reactionTime = 0f;
-                /*
-                * TODO: 
-                * update this to have a button control the restart function 
-                */
+              
             clockIsTicking = false;
                 timerCanBeStopped = true;
                 resultText.text = "Too early\n" + "Click Button to start again";
@@ -130,104 +147,22 @@ public class STReactionGamePlay : MonoBehaviour
         timerCanBeStopped = true;
     }
 
+    private void SaveHighScore(float value)
+    {
+        if (score.highScore1 < value)
+        {
+            // save score to json 
+        }
+        else if (score.highScore2 < value)
+        {
+            // save score to json
+        }
+        else if (score.highScore3 < value)
+        {
+            // save score to json
+        }
+
+        // if the value is not greater than highscore 3 then it should not be added 
+    }
+
 }
-
-
-
-
-/*
- *  public Stopwatch timer = new Stopwatch();
-    private float timeLeft;
-    public bool clicked;
-    public Image bgColor; 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        GenerateRandomNumber();
-        clicked = false;
-        ChangeBGRed();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // when 0 the timer will start 
-        Countdown();
-
-       
-        
-    }
-
-    private static float GenerateRandomNumber()
-    {
-        System.Random rng = new System.Random();
-        float rand = (float)rng.Next(5, 6);
-        return rand;
-
-    }
-    
-    public void UpdateReactionTime()
-    {
-       
-        TimeSpan timepass = timer.Elapsed;
-        string timeString = String.Format("{000}" + "  MS", timepass.Milliseconds);
-
-        Text reactionTime = GameObject.Find("ResultsText").GetComponent<Text>();
-        reactionTime.text = timeString;
-
-        timer.Stop();
-        UnityEngine.Debug.Log(timepass);
-    }
-   
-    private void Countdown()
-    {
-        if (timeLeft >= 0)
-        {
-            timeLeft -= Time.deltaTime;
-        }
-        else
-        {
-            timer.Start();
-            ChangeBGGreen();
-
-        }
-    }
-
-    public void ButtonClicked()
-    {
-        clicked = true;
-        timer.Stop();
-    }
-
-    public void ChangeBGRed()
-    {
-        bgColor.GetComponent<Image>().color = Color.red; 
-    }
-
-    public void ChangeBGGreen()
-    {
-        bgColor.GetComponent<Image>().color = Color.green;
-    }
-
-    private void StartGame()
-    {
-        
-    }
-
-    private void Subscribe()
-    {
-        Unsubscribe();
-        STEventManager.Instance.OnGameStart += StartGame;
-    }
-
-    private void Unsubscribe()
-    {
-        STEventManager.Instance.OnGameStart -= StartGame;
-    }
- * 
- * 
- */
-
-
-

@@ -8,8 +8,8 @@ public class MovingButton : MonoBehaviour
     public float maxX;
     public float minY;
     public float maxY;
-    private RectTransform rectT; 
-   
+    private RectTransform rectT;
+
     Vector2 targetPosition;
 
     
@@ -21,7 +21,7 @@ public class MovingButton : MonoBehaviour
     {
         targetPosition = GetRandomPosition();
         rectT = GetComponent<RectTransform>();
-       
+
     }
 
     // Update is called once per frame
@@ -52,4 +52,5 @@ public class MovingButton : MonoBehaviour
         
        // Debug.Log(targetPosition);
     }
+
 }
