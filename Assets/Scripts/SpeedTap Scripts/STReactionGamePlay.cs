@@ -3,19 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
 
-/*
- * Testing working reaction button and results dispay 
- */
 
-/* TODO
- * Utilize event manager instead of onClicked function. Optimize timer, avoid using the system.diagnostics 
- * 
- * Optimized timer functions and able to get accurate time calculated - Casey 
- * 
- * 
- * TODO: 
- */
+
+
+
 public class STReactionGamePlay : MonoBehaviour
 {
     [SerializeField] private Text readyText, resultText; 
@@ -24,18 +17,27 @@ public class STReactionGamePlay : MonoBehaviour
     [SerializeField] Camera mainCameraInScene; 
     private float reactionTime, startTime, randomDelayBeforeMeasuring;
     private bool clockIsTicking, timerCanBeStopped;
+    private Scene currentLevel; 
     public Text fastestTime;
     public SpeedTapScoresLevel1 score;
+
+    private const string lvl1 = "SpeedTapLevel1", lvl2 = "SpeedTapLevel2";
+
 
     // Start is called before the first frame update
     void Start()
     {
         InitializeVar();
 
-        // run this line if lvl 1 
-        startStopButton.onClick.AddListener(WhenButtonisClicked);
         
-
+        // run this line if lvl 1 
+        if (currentLevel.name == lvl1)
+        {
+            startStopButton.onClick.AddListener(WhenButtonisClicked);
+        }
+        
+       
+       
         // fastestTime.text = PlayerPrefs.GetFloat("FastestTime", 0.0f).ToString();
        
     }
@@ -44,7 +46,21 @@ public class STReactionGamePlay : MonoBehaviour
     void Update()
     {
         // run function if lvl 2
-        MovingTargetHit();
+        if (currentLevel.name == lvl2)
+        {
+            MovingTargetHit();
+
+           /* if(PauseMenu.GameIsPaused)
+            {
+                //movingTarget.SetActive(false);
+                
+            }
+            else
+            {
+                //movingTarget.SetActive(true);
+                
+            }*/
+        }
         
     }
 
@@ -78,6 +94,9 @@ public class STReactionGamePlay : MonoBehaviour
         resultText.text = "";
         clockIsTicking = false;
         timerCanBeStopped = true;
+
+        currentLevel = SceneManager.GetActiveScene();
+        Debug.Log(currentLevel.name);
          
     }
 
@@ -98,10 +117,7 @@ public class STReactionGamePlay : MonoBehaviour
                 StopCoroutine(nameof(StartMeasuring));
                 reactionTime = Time.time - startTime;
                 resultText.text = "Reaction time:\n" + reactionTime.ToString("N3") + "sec\n" + "Click button to start again";
-                /*
-                 * TODO: 
-                 * update this to have a button control the restart function 
-                 */
+          
                 clockIsTicking = false;     
 
             }
@@ -109,10 +125,7 @@ public class STReactionGamePlay : MonoBehaviour
             {
                 StopCoroutine(nameof(StartMeasuring));
                 reactionTime = 0f;
-                /*
-                * TODO: 
-                * update this to have a button control the restart function 
-                */
+              
             clockIsTicking = false;
                 timerCanBeStopped = true;
                 resultText.text = "Too early\n" + "Click Button to start again";
