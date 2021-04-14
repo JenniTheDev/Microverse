@@ -12,8 +12,10 @@ namespace JenniSays {
 
         [SerializeField]
         private int gameLevel = 1;
+
         [SerializeField]
         private int initialLevel;
+
         [SerializeField]
         private int resetLevel;
 
@@ -27,7 +29,6 @@ namespace JenniSays {
 
         private int currentIndex;
         private float pauseBetweenLevels = 2.0f;
-      
 
         private GameMode currentMode = GameMode.NONE;
 
@@ -43,7 +44,7 @@ namespace JenniSays {
         private void ResetGame() {
             currentMode = GameMode.PlayingBack;
             orderToMatch = new List<JSButton>();
-            gameLevel = initialLevel; 
+            gameLevel = initialLevel;
             currentIndex = 0;
         }
 
@@ -102,8 +103,5 @@ namespace JenniSays {
             AddRandomButton();
             StartGame();
         }
-
-        
     }
 }
-
