@@ -361,49 +361,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &158425894
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 158425896}
-  - component: {fileID: 158425895}
-  m_Layer: 0
-  m_Name: dogeManager
-  m_TagString: CoinEnemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &158425895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158425894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aece14e48fd0ae46b85bab42205759c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &158425896
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158425894}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -148, y: 137, z: -249.9756}
-  m_LocalScale: {x: 7.4459, y: 7.4459, z: 7.4459}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214820590
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +921,7 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 1660906460}
   isPaused: 0
   timerText: {fileID: 254573506}
-  timeSurvivedText: {fileID: 0}
+  timeSurvivedText: {fileID: 2135280823}
   startTime: 0
   minutes: 
   seconds: 
@@ -1134,7 +1091,6 @@ GameObject:
   - component: {fileID: 546746056}
   - component: {fileID: 546746055}
   - component: {fileID: 546746059}
-  - component: {fileID: 546746060}
   m_Layer: 0
   m_Name: RawImage_dogePlayer
   m_TagString: Player
@@ -1158,7 +1114,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -42, y: -174}
+  m_AnchoredPosition: {x: -42, y: -48}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546746055
@@ -1259,18 +1215,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 47.667725, y: 53.40892}
   m_EdgeRadius: 0
---- !u!114 &546746060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546746053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b4911e3fb03b4c4daddadefbcb96d9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &559334976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,9 +1538,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 200
-  Panel_gameOver: {fileID: 0}
+  Panel_gameOver: {fileID: 1822258746}
   collided: 0
-  dogeRB: {fileID: 0}
+  dogeRB: {fileID: 546746056}
 --- !u!1 &839653762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,7 +2346,7 @@ RectTransform:
   m_LocalScale: {x: 98.78064, y: 35.91101, z: 34.20856}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3311,7 +3255,6 @@ GameObject:
   - component: {fileID: 1822258747}
   - component: {fileID: 1822258749}
   - component: {fileID: 1822258748}
-  - component: {fileID: 1822258750}
   m_Layer: 5
   m_Name: Panel_gameOver
   m_TagString: Untagged
@@ -3381,18 +3324,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822258746}
   m_CullTransparentMesh: 1
---- !u!114 &1822258750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822258746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aece14e48fd0ae46b85bab42205759c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1884392154
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,7 +3904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 2135280820}
   isPaused: 0
-  timerText: {fileID: 0}
+  timerText: {fileID: 254573506}
   timeSurvivedText: {fileID: 2135280823}
   startTime: 0
   minutes: 
