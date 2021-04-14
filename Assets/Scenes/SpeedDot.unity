@@ -1284,6 +1284,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fee0dfa258aee243aeb24406844ba62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1512928787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5431766898524735546, guid: a23f70d3f790e8448acb61f366c5638d, type: 3}
+  m_PrefabInstance: {fileID: 6265371269299167322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d58bc7d3b3942419681a5503994313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1542268114 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5667891047026595551, guid: 98b0cfd382b4c2b4fa7b4350b7bf8b30, type: 3}
@@ -2106,9 +2117,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3325668150978335676, guid: f438141f8e3f65e4c8606e5f545a26d4, type: 3}
+      propertyPath: initialLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325668150978335676, guid: f438141f8e3f65e4c8606e5f545a26d4, type: 3}
       propertyPath: lineRenderer
       value: 
       objectReference: {fileID: 2073262864}
+    - target: {fileID: 3325668150978335676, guid: f438141f8e3f65e4c8606e5f545a26d4, type: 3}
+      propertyPath: dotsContainer
+      value: 
+      objectReference: {fileID: 1788242084}
+    - target: {fileID: 3325668150978335676, guid: f438141f8e3f65e4c8606e5f545a26d4, type: 3}
+      propertyPath: lineConnector
+      value: 
+      objectReference: {fileID: 1512928787}
     - target: {fileID: 3325668150978335676, guid: f438141f8e3f65e4c8606e5f545a26d4, type: 3}
       propertyPath: gameDots.Array.data[0]
       value: 

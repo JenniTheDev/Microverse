@@ -13,7 +13,6 @@ namespace SpeedDot {
         #region MonoBehaviour
         private void OnMouseDown() {
             this.onClick?.Raise(this);
-            HasBeenClicked = true;
         }
         #endregion
 

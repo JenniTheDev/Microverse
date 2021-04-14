@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,25 +20,35 @@ namespace SpeedDot {
         private float speedIncrease = 0.0f;
 
         [SerializeField]
-        private List<SpeedDot> gameDots;
+        private Transform dotsContainer;
 
         private List<SpeedDot> dotsToConnect;
 
         [SerializeField]
-        private LineRenderer lineRenderer;
+        private SpeedDotConnector2D lineConnector;
 
         private int currentIndex;
         private float pauseBetweenLevels = 1.5f;
+        private List<SpeedDot> gameDots;
 
         private GameMode currentMode = GameMode.NONE;
 
         private void Start() {
+            PopulateGameDotsList();
             ResetGame();
             AddRandomDots(gameLevel);
             StartCoroutine(PlayButtonSequence(dotsToConnect, speedIncrease));
         }
 
-        private void Update() {
+        private void PopulateGameDotsList() {
+            gameDots = new List<SpeedDot>();
+            SpeedDot dotToAdd;
+            foreach(Transform child in dotsContainer) {
+                dotToAdd = child.GetComponent<SpeedDot>();
+                if(dotToAdd != null) {
+                    gameDots.Add(dotToAdd);
+                }
+            }
         }
 
         private void ResetGame() {
@@ -77,22 +88,13 @@ namespace SpeedDot {
             currentMode = GameMode.PlayingBack;
             WaitForSeconds waitTime = new WaitForSeconds(pauseTime);
             yield return new WaitForSeconds(pauseBetweenLevels);
-            foreach (var dot in dots) {
-                ActivateDot(dot);
-                yield return waitTime;
+            for(int i = 0; i < dots.Count; i++) {
+                dots[i].gameObject.SetActive(true);
+                if(i < dots.Count-1) {
+                    yield return waitTime;
+                }
             }
             currentMode = GameMode.Receiving;
-        }
-
-        public void ActivateDot(SpeedDot selectedDot) {
-            selectedDot.gameObject.SetActive(true);
-            if (this.currentMode == GameMode.Receiving && currentIndex < dotsToConnect.Count) {
-                currentIndex++;
-            }
-
-            if (currentIndex == dotsToConnect.Count && currentIndex != 0 && AreAllDotsClicked()) {
-                NextLevel(); // This is wrong, should check if all are false
-            }
         }
 
         private void NextLevel() {
@@ -101,26 +103,42 @@ namespace SpeedDot {
             gameLevel++;
             currentMode = GameMode.PlayingBack;
             ResetDots();
-           // Line Renderer clear list, set list size to 0
-            dotsToConnect.Clear();
             AddRandomDots(gameLevel);
             StartGame();
         }
 
-        private bool AreAllDotsClicked() {
-            foreach (var dot in dotsToConnect) {
-                if (dot.HasBeenClicked == false) {
-                    Debug.Log("All dots not clicked");
-                    return false;
+        public void RegisterSpeedDotClick(SpeedDot dot) {
+            if(currentMode == GameMode.Receiving) {
+                if(!dot.HasBeenClicked) {
+                    dot.HasBeenClicked = true;
+                    lineConnector.DrawToNext(dot);
+                    ChangeColor(dot);
+                }
+
+                if(AreAllDotsClicked()) {
+                    NextLevel();
                 }
             }
-            Debug.Log("All dots clicked");
+        }
+
+        private void ChangeColor(SpeedDot dot) {
+            var dotRenderer = dot.GetComponent<Renderer>();
+            dotRenderer.material.SetColor("_Color", Color.cyan);
+        }
+
+        private bool AreAllDotsClicked() {
+            for(int i = 0; i < dotsToConnect.Count; i++) {
+                if(!dotsToConnect[i].HasBeenClicked) { return false; }
+            }
             return true;
         }
 
         private void ResetDots() {
-            foreach (var dot in gameDots) {
-                dot.gameObject.SetActive(false);
+            lineConnector.ClearLines();
+            dotsToConnect = new List<SpeedDot>();
+            for(int i = 0; i < gameDots.Count; i++) {
+                gameDots[i].gameObject.SetActive(false);
+                gameDots[i].HasBeenClicked = false;
             }
         }
     }

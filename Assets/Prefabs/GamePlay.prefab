@@ -47,29 +47,7 @@ MonoBehaviour:
   gameLevel: 1
   initialLevel: 7
   speedIncrease: 1
-  gameDots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  dotsContainer: {fileID: 0}
   lineRenderer: {fileID: 0}
 --- !u!114 &3325668150978335677
 MonoBehaviour:
@@ -89,7 +67,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3325668150978335676}
         m_TargetAssemblyTypeName: SpeedDot.SpeedDotGameLogic, Assembly-CSharp
-        m_MethodName: ActivateDot
+        m_MethodName: RegisterSpeedDotClick
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -12,11 +12,15 @@ namespace SpeedDot {
         }
 
         public void DrawToNext(SpeedDot nextDot) {
-            if(nextDot.HasBeenClicked == false) {
+            if(nextDot.HasBeenClicked) {
                 int lineIndex = renderOfLines.positionCount;
                 renderOfLines.positionCount++;
                 renderOfLines.SetPosition(lineIndex, nextDot.transform.position);
             }
+        }
+
+        public void ClearLines() {
+            renderOfLines.positionCount = 0;
         }
     }
 }
