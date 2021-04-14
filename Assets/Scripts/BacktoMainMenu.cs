@@ -6,6 +6,6 @@ public class BacktoMainMenu : MonoBehaviour {
 
     // Script for back button and return to main menu
     public void ToMainMenu() {
-        SceneManager.LoadScene("Main Menu Production", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }

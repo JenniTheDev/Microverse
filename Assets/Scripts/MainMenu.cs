@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
 {
   // Script for button to move to swipe menu
    public void ToSwipeMenu() {
-       SceneManager.LoadScene("swipe menu", LoadSceneMode.Single);
+       SceneManager.LoadScene("SwipeMenu", LoadSceneMode.Single);
    }
 
   //allows user to quit the application 
