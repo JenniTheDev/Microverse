@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu Production.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 3b4fe318fa44be5478a1ff3177cb2982
   - enabled: 1
-    path: Assets/Scenes/swipe menu.unity
+    path: Assets/Scenes/SwipeMenu.unity
     guid: 5bfa7c15d27b647b685b9475c4964ef4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/dogebackground.unity
     guid: a06eca3a7c1c4cc4d9d1b3eb9c376a1c
   - enabled: 1
-    path: Assets/Scenes/dodgecoin_ui.unity
+    path: Assets/Scenes/DodgeCoin.unity
     guid: 793b4364233fa21459a7d25b5881bdb3
   - enabled: 0
     path: 
