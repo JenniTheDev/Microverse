@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/SwipeMenu.unity
     guid: 5bfa7c15d27b647b685b9475c4964ef4
   - enabled: 0
-    path: Assets/Scenes/dogebackground.unity
-    guid: a06eca3a7c1c4cc4d9d1b3eb9c376a1c
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/DodgeCoin.unity
     guid: 793b4364233fa21459a7d25b5881bdb3
@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jenni Says.unity
     guid: 6058fe4ea2b7ec048bf42e6b50120556
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SpeedDotGame1.unity
     guid: 628fb5ff57042574f9d520df4c52499b
   - enabled: 1
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpeedTapLevel2.unity
     guid: e14ee730572cffc44ba635df0d23f75c
+  - enabled: 1
+    path: Assets/Scenes/SpeedDot.unity
+    guid: e4ead251516947c4b8f416562e721ce4
   m_configObjects: {}
