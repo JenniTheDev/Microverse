@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +26,6 @@ namespace SpeedDot {
         [SerializeField]
         private SpeedDotConnector2D lineConnector;
 
-        private int currentIndex;
         private float pauseBetweenLevels = 1.5f;
         private List<SpeedDot> gameDots;
 
@@ -43,9 +41,9 @@ namespace SpeedDot {
         private void PopulateGameDotsList() {
             gameDots = new List<SpeedDot>();
             SpeedDot dotToAdd;
-            foreach(Transform child in dotsContainer) {
+            foreach (Transform child in dotsContainer) {
                 dotToAdd = child.GetComponent<SpeedDot>();
-                if(dotToAdd != null) {
+                if (dotToAdd != null) {
                     gameDots.Add(dotToAdd);
                 }
             }
@@ -55,7 +53,7 @@ namespace SpeedDot {
             currentMode = GameMode.PlayingBack;
             dotsToConnect = new List<SpeedDot>();
             gameLevel = initialLevel;
-            currentIndex = 0;
+
             ResetDots();
         }
 
@@ -88,9 +86,9 @@ namespace SpeedDot {
             currentMode = GameMode.PlayingBack;
             WaitForSeconds waitTime = new WaitForSeconds(pauseTime);
             yield return new WaitForSeconds(pauseBetweenLevels);
-            for(int i = 0; i < dots.Count; i++) {
+            for (int i = 0; i < dots.Count; i++) {
                 dots[i].gameObject.SetActive(true);
-                if(i < dots.Count-1) {
+                if (i < dots.Count - 1) {
                     yield return waitTime;
                 }
             }
@@ -99,7 +97,7 @@ namespace SpeedDot {
 
         private void NextLevel() {
             Debug.Log("Next Level");
-            currentIndex = 0;
+
             gameLevel++;
             currentMode = GameMode.PlayingBack;
             ResetDots();
@@ -108,14 +106,14 @@ namespace SpeedDot {
         }
 
         public void RegisterSpeedDotClick(SpeedDot dot) {
-            if(currentMode == GameMode.Receiving) {
-                if(!dot.HasBeenClicked) {
+            if (currentMode == GameMode.Receiving) {
+                if (!dot.HasBeenClicked) {
                     dot.HasBeenClicked = true;
                     lineConnector.DrawToNext(dot);
                     ChangeColor(dot);
                 }
 
-                if(AreAllDotsClicked()) {
+                if (AreAllDotsClicked()) {
                     NextLevel();
                 }
             }
@@ -127,8 +125,8 @@ namespace SpeedDot {
         }
 
         private bool AreAllDotsClicked() {
-            for(int i = 0; i < dotsToConnect.Count; i++) {
-                if(!dotsToConnect[i].HasBeenClicked) { return false; }
+            for (int i = 0; i < dotsToConnect.Count; i++) {
+                if (!dotsToConnect[i].HasBeenClicked) { return false; }
             }
             return true;
         }
@@ -136,7 +134,7 @@ namespace SpeedDot {
         private void ResetDots() {
             lineConnector.ClearLines();
             dotsToConnect = new List<SpeedDot>();
-            for(int i = 0; i < gameDots.Count; i++) {
+            for (int i = 0; i < gameDots.Count; i++) {
                 gameDots[i].gameObject.SetActive(false);
                 gameDots[i].HasBeenClicked = false;
             }
