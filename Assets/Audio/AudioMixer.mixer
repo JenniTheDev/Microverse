@@ -37,6 +37,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 7eb89fdd83bc7b548bdd033533999d47
     name: BackgroundMusic
+  - guid: 27a9da90cd1515149923abe10c5d6c4b
+    name: Buttons
   - guid: d9bafbee00f8ed442b14110bef620112
     name: MainVolume
   - guid: cd27d413a330094429ebdaf7ee8f8043
@@ -96,7 +98,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 3818b66ef32645c4593c7f1ba9ded4e2
   m_FloatValues:
-    7eb89fdd83bc7b548bdd033533999d47: -10.345207
+    7eb89fdd83bc7b548bdd033533999d47: -52
   m_TransitionOverrides: {}
 --- !u!243 &2617336680336273270
 AudioMixerGroupController:

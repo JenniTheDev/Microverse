@@ -25,6 +25,9 @@ namespace JenniSays {
         [SerializeField]
         private List<JSButton> gameButtons;
 
+        [SerializeField]
+        private AudioSource speaker;
+
         private List<JSButton> orderToMatch;
 
         private int currentIndex;
@@ -82,6 +85,7 @@ namespace JenniSays {
 
         public void ActivateButton(JSButton selectedButton) {
             selectedButton.ButtonAnimation.Play();
+            PlayButtonAudio(selectedButton);
             if (this.currentMode == GameMode.Receiving && currentIndex < orderToMatch.Count) {
                 if (selectedButton == orderToMatch[currentIndex]) {
                     Debug.Log("Match");
@@ -102,6 +106,11 @@ namespace JenniSays {
             currentMode = GameMode.PlayingBack;
             AddRandomButton();
             StartGame();
+        }
+
+        private void PlayButtonAudio(JSButton buttonToPlay) {
+            speaker.clip = buttonToPlay.GetComponent<AudioClip>();
+            speaker.Play();
         }
     }
 }
