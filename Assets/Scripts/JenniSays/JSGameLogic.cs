@@ -109,7 +109,7 @@ namespace JenniSays {
         }
 
         private void PlayButtonAudio(JSButton buttonToPlay) {
-            speaker.clip = buttonToPlay.GetComponent<AudioClip>();
+            speaker.clip = buttonToPlay.ButtonAudioClip;
             speaker.Play();
         }
     }
