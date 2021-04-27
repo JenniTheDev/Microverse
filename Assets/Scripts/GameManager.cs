@@ -19,10 +19,6 @@ public class GameManager : MonoBehaviour {
     #region MonoBehavior
 
     private void Start() {
-        Screen.autorotateToPortrait = false;
-        Screen.autorotateToPortraitUpsideDown = false;
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
-        Debug.Log("Screen should be rotated");
         Subscribe();
         currentState = GameState.Intro;
         // Might want to move this stuff to its own method
