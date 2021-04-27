@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Variables;
 
 namespace JenniSays {
     public class JSGameLogic : MonoBehaviour {
@@ -12,6 +13,8 @@ namespace JenniSays {
 
         [SerializeField]
         private int gameLevel = 1;
+        [SerializeField]
+        private IntVariable score;
 
         [SerializeField]
         private int initialLevel;
@@ -49,6 +52,7 @@ namespace JenniSays {
             orderToMatch = new List<JSButton>();
             gameLevel = initialLevel;
             currentIndex = 0;
+            score.SetValue(1);
         }
 
         private void StartGame() {
@@ -103,6 +107,7 @@ namespace JenniSays {
             Debug.Log("Next Level");
             currentIndex = 0;
             gameLevel++;
+            score.SetValue(gameLevel);
             currentMode = GameMode.PlayingBack;
             AddRandomButton();
             StartGame();
