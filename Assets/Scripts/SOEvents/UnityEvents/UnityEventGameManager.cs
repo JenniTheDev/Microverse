@@ -1,7 +1,8 @@
-﻿// Jenni
+// Jenni
 using UnityEngine.Events;
 
 namespace SOEvents.UnityEvents {
     [System.Serializable]
-    public class UnityEventJSButton : UnityEvent<JSButton> { }
+    public class UnityEventGameManager : UnityEvent<GameManager> {
+    }
 }
