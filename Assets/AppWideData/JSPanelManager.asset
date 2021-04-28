@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69db666b4c52bfc429bcb6d7754edf42, type: 3}
-  m_Name: JSGameManager
+  m_Script: {fileID: 11500000, guid: 4e0b26a502b47ec40979f837b0f6bae7, type: 3}
+  m_Name: JSPanelManager
   m_EditorClassIdentifier: 
-  currentState: 0
-  onGameStateChange: {fileID: 11400000, guid: 1b9984092756ece47a3e7d85512b7688, type: 2}
+  intro: {fileID: 0}
+  playing: {fileID: 0}
+  gameOver: {fileID: 0}
