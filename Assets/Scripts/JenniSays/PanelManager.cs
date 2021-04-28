@@ -1,8 +1,8 @@
 // Jenni
 using UnityEngine;
 namespace JenniSays {
-    [CreateAssetMenu(menuName = "Scriptable Objects/Managers/PanelManager")]
-    public class PanelManager : ScriptableObject {
+    
+    public class PanelManager : MonoBehaviour {
 
         [SerializeField] private GameObject intro;
         [SerializeField] private GameObject playing;
