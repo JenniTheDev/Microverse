@@ -1,4 +1,5 @@
 // Jenni
+using SOEvents.Events;
 using UnityEngine;
 namespace JenniSays {
     
@@ -7,7 +8,9 @@ namespace JenniSays {
         [SerializeField] private GameObject intro;
         [SerializeField] private GameObject playing;
         [SerializeField] private GameObject gameOver;
-      
+        [SerializeField] private GameEventGameState onGameStateChange;
+
+
         private void ChangePanel(GameState currentState) {
             if (currentState == GameState.Intro) {
                 intro.SetActive(true);

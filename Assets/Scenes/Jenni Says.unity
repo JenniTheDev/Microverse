@@ -1016,6 +1016,7 @@ MonoBehaviour:
   intro: {fileID: 2071819116}
   playing: {fileID: 330217755}
   gameOver: {fileID: 1374620405}
+  onGameStateChange: {fileID: 11400000, guid: 1b9984092756ece47a3e7d85512b7688, type: 2}
 --- !u!4 &534758856
 Transform:
   m_ObjectHideFlags: 0
