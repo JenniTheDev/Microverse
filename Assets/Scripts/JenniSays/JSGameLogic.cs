@@ -13,6 +13,7 @@ namespace JenniSays {
 
         [SerializeField]
         private int gameLevel = 1;
+
         [SerializeField]
         private IntVariable score;
 
@@ -37,6 +38,8 @@ namespace JenniSays {
         private float pauseBetweenLevels = 2.0f;
 
         private GameMode currentMode = GameMode.NONE;
+
+        [SerializeField] private GameManager gameManager;
 
         private void Start() {
             ResetGame();
@@ -72,7 +75,7 @@ namespace JenniSays {
 
         private void GameOver() {
             // Game Manager Broadcast Game Over
-           
+            gameManager.EndGame();
             ResetGame();
             Debug.Log("Start Over");
         }

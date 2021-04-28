@@ -4,33 +4,44 @@ using UnityEngine;
 namespace JenniSays {
     
     public class PanelManager : MonoBehaviour {
-
         [SerializeField] private GameObject intro;
         [SerializeField] private GameObject playing;
         [SerializeField] private GameObject gameOver;
-        [SerializeField] private GameEventGameState onGameStateChange;
+        [SerializeField] private GameManager gameManager;
 
+        #region MonoBehaviour
+        private void Start() {
+            ResetPanels();
+            gameManager.PlayIntro();
+        }
+        #endregion
 
-        private void ChangePanel(GameState currentState) {
-            if (currentState == GameState.Intro) {
-                intro.SetActive(true);
-                playing.SetActive(false);
-                gameOver.SetActive(false);
-            }
-            if (currentState == GameState.Playing) {
-                intro.SetActive(false);
-                playing.SetActive(true);
-                gameOver.SetActive(false);
-            }
-            if (currentState == GameState.GameOver) {
-                intro.SetActive(false);
-                playing.SetActive(false);
-                gameOver.SetActive(true);
-            }
+        public void ChangePanel(GameState currentState) {
+            ResetPanels();
+            switch(currentState) {
+                case GameState.Intro :
+                    intro.SetActive(true);
+                    break;
 
+                case GameState.Playing:
+                    playing.SetActive(true);
+                    break;
+
+                case GameState.GameOver:
+                    gameOver.SetActive(true);
+                    break;
+
+                default:
+                    break;
+            }
         }
         
-      
+        private void ResetPanels() {
+            intro.SetActive(false);
+            playing.SetActive(false);
+            gameOver.SetActive(false);
+        }
+
     }
 }
 

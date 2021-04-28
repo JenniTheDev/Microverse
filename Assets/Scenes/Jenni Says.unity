@@ -353,6 +353,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 1b9984092756ece47a3e7d85512b7688, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &332945072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -360,8 +363,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1703465526812020770, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1703465526812020773, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
       propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703465526812020773, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703465526812020773, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703465526812020774, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1703465527192835222, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
@@ -377,20 +396,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 1703465527192835225, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703465527192835225, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703465527192835225, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703465527192835225, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703465527192835225, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 102.419
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1703465527192835225, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 44.395
+      value: -44
       objectReference: {fileID: 0}
     - target: {fileID: 1703465527192835225, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -311
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1703465527192835225, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 178
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1703465528685332946, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
       propertyPath: m_RootOrder
@@ -398,11 +433,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1703465528685332946, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 881.4808
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1703465528685332946, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 38.841415
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1703465528685332946, guid: 93ad1aa445b8a1d40bf183d0620cae12, type: 3}
       propertyPath: m_LocalPosition.z
@@ -925,7 +960,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 9
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1016,7 +1051,7 @@ MonoBehaviour:
   intro: {fileID: 2071819116}
   playing: {fileID: 330217755}
   gameOver: {fileID: 1374620405}
-  onGameStateChange: {fileID: 11400000, guid: 1b9984092756ece47a3e7d85512b7688, type: 2}
+  gameManager: {fileID: 11400000, guid: 6af98db9761570c40906aed1196b62d3, type: 2}
 --- !u!4 &534758856
 Transform:
   m_ObjectHideFlags: 0
@@ -1044,6 +1079,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 1b9984092756ece47a3e7d85512b7688, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 534758855}
+        m_TargetAssemblyTypeName: JenniSays.PanelManager, Assembly-CSharp
+        m_MethodName: ChangePanel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &743606307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1137,7 @@ MonoBehaviour:
   - {fileID: 2006327691}
   - {fileID: 902768077}
   speaker: {fileID: 412517596}
+  gameManager: {fileID: 11400000, guid: 6af98db9761570c40906aed1196b62d3, type: 2}
 --- !u!4 &743606309
 Transform:
   m_ObjectHideFlags: 0
@@ -1142,6 +1193,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 1b9984092756ece47a3e7d85512b7688, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &802179423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,6 +1938,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 1b9984092756ece47a3e7d85512b7688, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1483816115 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4381800994174571778, guid: 099175eb1af69a04d81600d8f460eedc, type: 3}
@@ -2724,6 +2781,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 1b9984092756ece47a3e7d85512b7688, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2071819119
 MonoBehaviour:
   m_ObjectHideFlags: 0

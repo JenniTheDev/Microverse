@@ -9,20 +9,26 @@ public class GameManager : ScriptableObject {
 
     public GameState CurrentState {
         get { return this.currentState; }
-        private set {
-            this.currentState = value;
-            onGameStateChange.Raise(this.currentState);
-        }
     }
 
     #region Methods
+    public void PlayIntro() {
+        currentState = GameState.Intro;
+        BroadcastGameStateChange();
+    }
 
     public void PlayGame() {
         currentState = GameState.Playing;
+        BroadcastGameStateChange();
     }
 
     public void EndGame() {
         currentState = GameState.GameOver;
+        BroadcastGameStateChange();
+    }
+
+    private void BroadcastGameStateChange() {
+        onGameStateChange.Raise(this.currentState);
     }
 
     #endregion Methods
