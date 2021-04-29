@@ -58,8 +58,11 @@ namespace JenniSays {
             score.SetValue(1);
         }
 
-        private void StartGame() {
-            StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
+        public void StartGame() {
+               
+                StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
+            
+            
         }
 
         private void AddRandomButton() {
@@ -74,7 +77,6 @@ namespace JenniSays {
         }
 
         private void GameOver() {
-            // Game Manager Broadcast Game Over
             gameManager.EndGame();
             ResetGame();
             Debug.Log("Start Over");
