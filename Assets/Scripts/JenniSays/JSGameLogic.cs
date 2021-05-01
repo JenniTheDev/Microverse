@@ -45,7 +45,6 @@ namespace JenniSays {
             ResetGame();
             // AddRandomButtons(gameLevel);
             //StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
-            StartGame();
         }
 
         private void Update() {
@@ -59,11 +58,11 @@ namespace JenniSays {
             score.SetValue(1);
         }
 
-        public void StartGame() {
-            AddRandomButton();
+        public void StartGame(GameState currentState) {
+            if (currentState == GameState.Playing) {
+                AddRandomButton();
                 StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
-            
-            
+            }
         }
 
         private void AddRandomButton() {
@@ -117,7 +116,7 @@ namespace JenniSays {
             score.SetValue(gameLevel);
             currentMode = GameMode.PlayingBack;
             // AddRandomButton();
-            StartGame();
+            gameManager.PlayGame();
         }
 
         private void PlayButtonAudio(JSButton buttonToPlay) {
@@ -126,3 +125,4 @@ namespace JenniSays {
         }
     }
 }
+
