@@ -24,10 +24,16 @@ namespace JenniSays {
         private int resetLevel;
 
         [SerializeField]
-        private float speedIncrease = 0.0f;
+        private int startBonusLevel;
+
+        [SerializeField]
+        private float speedIncrease = 0.2f;
 
         [SerializeField]
         private List<JSButton> gameButtons;
+
+        [SerializeField]
+        private List<JSButton> bonusButtons;
 
         [SerializeField]
         private AudioSource speaker;
@@ -35,7 +41,7 @@ namespace JenniSays {
         private List<JSButton> orderToMatch;
 
         private int currentIndex;
-        private float pauseBetweenLevels = 2.0f;
+        private float pauseBetweenLevels = 1.0f;
 
         private GameMode currentMode = GameMode.NONE;
 
@@ -43,8 +49,6 @@ namespace JenniSays {
 
         private void Start() {
             ResetGame();
-            // AddRandomButtons(gameLevel);
-            //StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
         }
 
         private void Update() {
@@ -56,6 +60,11 @@ namespace JenniSays {
             gameLevel = initialLevel;
             currentIndex = 0;
             score.SetValue(1);
+            foreach (var button in bonusButtons) {
+                button.gameObject.SetActive(false);
+            // need to remove bonus buttons from game button list
+            }
+
         }
 
         public void StartGame(GameState currentState) {
@@ -111,12 +120,22 @@ namespace JenniSays {
 
         private void NextLevel() {
             Debug.Log("Next Level");
+            if (gameLevel == startBonusLevel) {
+                AddBonusButtons();
+            }
             currentIndex = 0;
             gameLevel++;
             score.SetValue(gameLevel);
             currentMode = GameMode.PlayingBack;
-            // AddRandomButton();
+            pauseBetweenLevels *= speedIncrease;
             gameManager.PlayGame();
+        }
+
+        private void AddBonusButtons() {
+            foreach (var button in bonusButtons) {
+                button.gameObject.SetActive(true);
+                gameButtons.Add(button);
+            }
         }
 
         private void PlayButtonAudio(JSButton buttonToPlay) {
@@ -125,4 +144,3 @@ namespace JenniSays {
         }
     }
 }
-
