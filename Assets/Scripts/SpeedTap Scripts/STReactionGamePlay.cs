@@ -19,7 +19,7 @@ public class STReactionGamePlay : MonoBehaviour
     private bool clockIsTicking, timerCanBeStopped;
     private Scene currentLevel; 
     public Text fastestTime;
-    public SpeedTapScoresLevel1 score;
+    public SpeedTapScoresLevel1 score = new SpeedTapScoresLevel1();
 
     private const string lvl1 = "SpeedTapLevel1", lvl2 = "SpeedTapLevel2";
 
@@ -34,6 +34,7 @@ public class STReactionGamePlay : MonoBehaviour
         if (currentLevel.name == lvl1)
         {
             startStopButton.onClick.AddListener(WhenButtonisClicked);
+ 
         }
         
        
@@ -96,7 +97,6 @@ public class STReactionGamePlay : MonoBehaviour
         timerCanBeStopped = true;
 
         currentLevel = SceneManager.GetActiveScene();
-        Debug.Log(currentLevel.name);
          
     }
 
@@ -117,8 +117,12 @@ public class STReactionGamePlay : MonoBehaviour
                 StopCoroutine(nameof(StartMeasuring));
                 reactionTime = Time.time - startTime;
                 resultText.text = "Reaction time:\n" + reactionTime.ToString("N3") + "sec\n" + "Click button to start again";
-          
-                clockIsTicking = false;     
+
+                // Compare scores for save 
+                SaveHighScore(reactionTime);
+                Debug.Log(reactionTime);
+
+            clockIsTicking = false;     
 
             }
             else if (clockIsTicking && !timerCanBeStopped)
@@ -147,21 +151,47 @@ public class STReactionGamePlay : MonoBehaviour
         timerCanBeStopped = true;
     }
 
+
+    /*------------ Save and Load Functions ------------*/
     private void SaveHighScore(float value)
     {
-        if (score.highScore1 < value)
+        /* Loading save data to object, if does not exist default values will be zero */
+        score = SaveManager.Load();
+
+
+        if (score.highScore1 > value || score.highScore1 == 0f)
         {
-            // save score to json 
+            // moving highscore values down and setting new high score 
+            score.highScore3 = score.highScore2;
+            score.highScore2 = score.highScore1;
+            score.highScore1 = value;
+
+            // save updated scores to the save file 
+            SaveManager.Save(score);
+            Debug.Log(score.highScore1);
+
         }
-        else if (score.highScore2 < value)
+        else if (score.highScore2 > value || score.highScore2 == 0f)
         {
-            // save score to json
+            // moving highscore values down and setting new high score 
+            score.highScore3 = score.highScore2;
+            score.highScore2 = value;
+
+            // save updated scores to the save file 
+            SaveManager.Save(score);
+            Debug.Log(score.highScore2);
         }
-        else if (score.highScore3 < value)
+        else if (score.highScore3 > value)
         {
-            // save score to json
+            // moving highscore values down and setting new high score 
+            score.highScore3 = value;
+
+            // save updated scores to the save file 
+            SaveManager.Save(score);
+            Debug.Log(score.highScore3);
         }
 
+        
         // if the value is not greater than highscore 3 then it should not be added 
     }
 

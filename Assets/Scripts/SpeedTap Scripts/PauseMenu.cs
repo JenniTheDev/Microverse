@@ -5,7 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI, currentGame; 
+    public GameObject pauseMenuUI, currentGame;
 
     void Start()
     {
@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         currentGame.SetActive(false);
+       // highscoreUI.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true; 
     }
@@ -31,8 +32,21 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         currentGame.SetActive(true);
+        //highscoreUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false; 
     }
-  
+
+
+    /* ---------------- Highscore screen ---------------- *//*
+
+    public void HighscoreScreen()
+    {
+        highscoreUI.SetActive(true);
+        pauseMenuUI.SetActive(true);
+        currentGame.SetActive(false);
+        Time.timeScale = 0f;
+        GameIsPaused = false;
+    }
+  */
 }
