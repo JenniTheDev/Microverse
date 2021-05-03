@@ -60,11 +60,15 @@ namespace JenniSays {
             gameLevel = initialLevel;
             currentIndex = 0;
             score.SetValue(1);
+            RemoveBonusButtons();
+
+        }
+
+        private void RemoveBonusButtons() {
             foreach (var button in bonusButtons) {
                 button.gameObject.SetActive(false);
-            // need to remove bonus buttons from game button list
+                gameButtons.Remove(button);
             }
-
         }
 
         public void StartGame(GameState currentState) {
