@@ -214,7 +214,6 @@ GameObject:
   - component: {fileID: 172473179}
   - component: {fileID: 172473182}
   - component: {fileID: 172473181}
-  - component: {fileID: 172473180}
   m_Layer: 5
   m_Name: FinalScore
   m_TagString: Untagged
@@ -241,20 +240,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 413}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &172473180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172473178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe3ba616a68b43469a0ba599b32bfa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 11400000, guid: 21a9ef672752b5c428dec8783f865983, type: 2}
-  scoreText: {fileID: 172473181}
 --- !u!114 &172473181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,7 +810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4711122370112342910, guid: 099175eb1af69a04d81600d8f460eedc, type: 3}
       propertyPath: m_Volume
-      value: 0.1
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 4711122370112342910, guid: 099175eb1af69a04d81600d8f460eedc, type: 3}
       propertyPath: m_audioClip
@@ -1301,6 +1286,7 @@ GameObject:
   - component: {fileID: 743606308}
   - component: {fileID: 743606310}
   - component: {fileID: 743606311}
+  - component: {fileID: 743606312}
   m_Layer: 0
   m_Name: GameLogic
   m_TagString: Untagged
@@ -1407,6 +1393,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 743606312}
+        m_TargetAssemblyTypeName: JenniSays.JSGameOver, Assembly-CSharp
+        m_MethodName: GameOver
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &743606312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743606307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba707d58dfde924fa4f8ab9ef288b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 11400000, guid: 6af98db9761570c40906aed1196b62d3, type: 2}
+  speaker: {fileID: 412517596}
+  gameOverSound: {fileID: 8300000, guid: 2ec4e918116baae45a303049fe937f3c, type: 3}
+  score: {fileID: 11400000, guid: 21a9ef672752b5c428dec8783f865983, type: 2}
+  finalScore: 0
+  finalScoreText: {fileID: 172473181}
 --- !u!1 &802179423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,7 +1567,7 @@ PrefabInstance:
     - target: {fileID: 265933478717027443, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: buttonAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 0bcafde20c173254c8c6db817aa06ce5, type: 3}
+      objectReference: {fileID: 8300000, guid: 9e10d5efb5d143f47bb11ab1b9f32d14, type: 3}
     - target: {fileID: 6605161601922865551, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Name
       value: GameButton_BottomRight
@@ -2031,6 +2047,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.9622642
       objectReference: {fileID: 0}
+    - target: {fileID: 7159308246245204758, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
 --- !u!1 &1374620405
@@ -2398,7 +2418,7 @@ PrefabInstance:
     - target: {fileID: 265933478717027443, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: buttonAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 7fbe35d1355b35144a0a7fdc3228ebc0, type: 3}
+      objectReference: {fileID: 8300000, guid: 0f17b27257bb6ad45a328df056ab617c, type: 3}
     - target: {fileID: 6605161601922865551, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Name
       value: GameButton_TopRight

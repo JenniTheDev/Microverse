@@ -1,8 +1,7 @@
 // Jenni
-using SOEvents.Events;
 using UnityEngine;
+
 namespace JenniSays {
-    
     public class PanelManager : MonoBehaviour {
         [SerializeField] private GameObject intro;
         [SerializeField] private GameObject playing;
@@ -10,16 +9,18 @@ namespace JenniSays {
         [SerializeField] private GameManager gameManager;
 
         #region MonoBehaviour
+
         private void Start() {
             ResetPanels();
             gameManager.PlayIntro();
         }
-        #endregion
+
+        #endregion MonoBehaviour
 
         public void ChangePanel(GameState currentState) {
             ResetPanels();
-            switch(currentState) {
-                case GameState.Intro :
+            switch (currentState) {
+                case GameState.Intro:
                     intro.SetActive(true);
                     break;
 
@@ -35,13 +36,11 @@ namespace JenniSays {
                     break;
             }
         }
-        
+
         private void ResetPanels() {
             intro.SetActive(false);
             playing.SetActive(false);
             gameOver.SetActive(false);
         }
-
     }
 }
-

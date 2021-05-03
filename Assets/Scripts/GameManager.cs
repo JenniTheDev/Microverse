@@ -12,6 +12,7 @@ public class GameManager : ScriptableObject {
     }
 
     #region Methods
+
     public void PlayIntro() {
         currentState = GameState.Intro;
         BroadcastGameStateChange();

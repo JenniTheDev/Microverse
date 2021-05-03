@@ -61,7 +61,6 @@ namespace JenniSays {
             currentIndex = 0;
             score.SetValue(1);
             RemoveBonusButtons();
-
         }
 
         private void RemoveBonusButtons() {
@@ -107,9 +106,15 @@ namespace JenniSays {
         }
 
         public void ActivateButton(JSButton selectedButton) {
+            //if (speaker.isPlaying || selectedButton.ButtonAnimation.isPlaying) {
+            //    Debug.Log("Attempted to activate JSButton while already active");
+            //    return;
+            //}
             selectedButton.ButtonAnimation.Play();
             PlayButtonAudio(selectedButton);
             if (this.currentMode == GameMode.Receiving && currentIndex < orderToMatch.Count) {
+                selectedButton.ButtonAnimation.Play();
+                PlayButtonAudio(selectedButton);
                 if (selectedButton == orderToMatch[currentIndex]) {
                     Debug.Log("Match");
                     currentIndex++;

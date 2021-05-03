@@ -1,6 +1,5 @@
 // Jenni
 using SOEvents.Events;
-using SOEvents.UnityEvents;
 using UnityEngine.Events;
 
 namespace SOEvents.Listeners {

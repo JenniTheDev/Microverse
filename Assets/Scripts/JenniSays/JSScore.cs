@@ -8,6 +8,6 @@ public class JSScore : MonoBehaviour {
     [SerializeField] private TMP_Text scoreText;
 
     private void Update() {
-        scoreText.text = "Level " + score.GetValue().ToString();
+        scoreText.text = $"Level {score.GetValue().ToString()}";
     }
 }

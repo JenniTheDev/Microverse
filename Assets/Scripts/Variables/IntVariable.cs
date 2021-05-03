@@ -1,6 +1,7 @@
 // Jenni
 // Modification of RoboRyanTron's Unite 2017's
 // game architecture with scriptable objects
+using System;
 using UnityEngine;
 
 namespace Variables {
@@ -30,6 +31,10 @@ namespace Variables {
 
         public void ApplyChange(IntVariable amount) {
             Value += amount.Value;
+        }
+
+        public static implicit operator int(IntVariable v) {
+            throw new NotImplementedException();
         }
     }
 }
