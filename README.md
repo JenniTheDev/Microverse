@@ -25,7 +25,7 @@ Known in class as "Group F"
 * Jenni F. - [Portfolio](https://jennithe.dev/) - [Github](www.github.com/JenniTheDev)
 * Brian A. - [Portfolio](https://altbrian379.github.io/) - [Github](https://github.com/AltBrian379)
 * Dalisa N. - [Portfolio] - [Github](https://github.com/DalisaNguyen)
-* Brian L. - [Portfolio] - [Github](https://github.com/BrianLan55)
+* Brian L. - [Portfolio](https://brianlandaverde.weebly.com/) - [Github](https://github.com/BrianLan55)
 * Casey T. - [Portfolio] - [Github](https://github.com/CaseyTea)
 
 
