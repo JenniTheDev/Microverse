@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; 
-
-
+using UnityEngine.SceneManagement;
+//using System.Drawing;
 
 
 
@@ -23,6 +22,7 @@ public class STReactionGamePlay : MonoBehaviour
     public SpeedTapScoresLevel2 score2 = new SpeedTapScoresLevel2();
 
     private const string lvl1 = "SpeedTapLevel1", lvl2 = "SpeedTapLevel2";
+    
 
 
     // Start is called before the first frame update
@@ -97,13 +97,15 @@ public class STReactionGamePlay : MonoBehaviour
 
     public void WhenButtonisClicked()
     {
-        
-            if (!clockIsTicking)
+        Color myRed = new Color();
+        ColorUtility.TryParseHtmlString("#df2b2b", out myRed);
+
+        if (!clockIsTicking)
             {
                 StartCoroutine(nameof(StartMeasuring));
                 readyText.text = "Wait for Green";
                 resultText.text = "";
-                background.color = Color.red;
+                background.color = myRed; 
                 clockIsTicking = true;
                 timerCanBeStopped = false;
             }
@@ -143,10 +145,13 @@ public class STReactionGamePlay : MonoBehaviour
 
     private IEnumerator StartMeasuring()
     {
+        Color myGreen = new Color();
+        ColorUtility.TryParseHtmlString("#3CB371", out myGreen);
+
         // will wait for delay before starting 
         randomDelayBeforeMeasuring = Random.Range(0.5f, 3f);
         yield return new WaitForSeconds(randomDelayBeforeMeasuring);
-        background.color = Color.green;
+        background.color = myGreen;
         startTime = Time.time;
         clockIsTicking = true;
         timerCanBeStopped = true;
