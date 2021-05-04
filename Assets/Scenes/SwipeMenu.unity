@@ -4728,7 +4728,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Description of SpeedDot.
+  m_Text: Click on the dots and each level as fast as possible.
 --- !u!222 &1872929525
 CanvasRenderer:
   m_ObjectHideFlags: 0
