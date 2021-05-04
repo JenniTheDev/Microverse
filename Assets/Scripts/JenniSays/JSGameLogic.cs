@@ -91,7 +91,6 @@ namespace JenniSays {
         private void GameOver() {
             gameManager.EndGame();
             ResetGame();
-            Debug.Log("Start Over");
         }
 
         private IEnumerator PlayButtonSequence(List<JSButton> buttons, float pauseTime) {
@@ -128,7 +127,6 @@ namespace JenniSays {
         }
 
         private void NextLevel() {
-            Debug.Log("Next Level");
             if (gameLevel == startBonusLevel) {
                 AddBonusButtons();
             }

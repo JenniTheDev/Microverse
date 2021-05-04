@@ -1,5 +1,4 @@
 // Jenni
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Variables;
@@ -10,9 +9,8 @@ namespace JenniSays {
         [SerializeField] private AudioSource speaker;
         [SerializeField] private AudioClip gameOverSound;
         [SerializeField] private IntVariable score;
-        [SerializeField] private int finalScore;
+        [SerializeField] private string finalScore;
         [SerializeField] private TMP_Text finalScoreText;
-        private List<int> highScores;
 
         public void GameOver(GameState currentState) {
             if (currentState == GameState.GameOver) {
@@ -31,11 +29,8 @@ namespace JenniSays {
         }
 
         private void DisplayFinalScore() {
-            // finalScore = (int)score;
-            //finalScore = System.Convert.ToInt32(score);
-            // int.TryParse(score, out finalScore);
-            //TODO: convert IntVariable to variable?
-            finalScoreText.text = $"Final Score {finalScore.ToString()}";
+            finalScore = score.GetValue().ToString();
+            finalScoreText.text = $"Final Score {finalScore}";
         }
     }
 }

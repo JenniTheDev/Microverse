@@ -237,7 +237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 413}
+  m_AnchoredPosition: {x: 0, y: 341}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172473181
@@ -1421,7 +1421,7 @@ MonoBehaviour:
   speaker: {fileID: 412517596}
   gameOverSound: {fileID: 8300000, guid: 2ec4e918116baae45a303049fe937f3c, type: 3}
   score: {fileID: 11400000, guid: 21a9ef672752b5c428dec8783f865983, type: 2}
-  finalScore: 0
+  finalScore: 
   finalScoreText: {fileID: 172473181}
 --- !u!1 &802179423
 GameObject:
@@ -1602,11 +1602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1767,11 +1767,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1977,11 +1977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2032,24 +2032,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7159308246245204758, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159308246245204758, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 36ba7d53e2b21b849b39bc4b09052b6f, type: 3}
     - target: {fileID: 7159308246245204758, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Color.b
-      value: 0.92141336
+      value: 0.8244927
       objectReference: {fileID: 0}
     - target: {fileID: 7159308246245204758, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Color.g
-      value: 0.92141336
+      value: 0.8244927
       objectReference: {fileID: 0}
     - target: {fileID: 7159308246245204758, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Color.r
-      value: 0.9622642
+      value: 0.9056604
       objectReference: {fileID: 0}
     - target: {fileID: 7159308246245204758, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159308246245204758, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159308246245204758, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
+      propertyPath: m_RaycastPadding.x
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
@@ -2304,7 +2316,7 @@ PrefabInstance:
     - target: {fileID: 265933478717027443, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: buttonAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 60aa31017c19b294b970ea5c2312b5e3, type: 3}
+      objectReference: {fileID: 8300000, guid: ca72f044ca0d0a940984358e3e3fc8a6, type: 3}
     - target: {fileID: 6605161601922865551, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Name
       value: GameButton_RightBonus
@@ -2343,11 +2355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2453,11 +2465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2819,7 +2831,7 @@ PrefabInstance:
     - target: {fileID: 265933478717027443, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: buttonAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 60aa31017c19b294b970ea5c2312b5e3, type: 3}
+      objectReference: {fileID: 8300000, guid: ca72f044ca0d0a940984358e3e3fc8a6, type: 3}
     - target: {fileID: 6605161601922865551, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_Name
       value: GameButton_LeftBonus
@@ -2858,11 +2870,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3082,11 +3094,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7090210603063959622, guid: cbd9e475f7435d84087955e8761bb6ac, type: 3}
       propertyPath: m_LocalPosition.x
