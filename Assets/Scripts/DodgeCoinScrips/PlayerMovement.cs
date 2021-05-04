@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         //}
 
         // just call game over here
-        Debug.Log("game over");
+        
         
     }
 

@@ -7,7 +7,7 @@ public class SpawnCoins : MonoBehaviour {
     [SerializeField] private float spawnDelay = 0.1f;
     [SerializeField] private float spawnTime = 5f;
 
-    public bool stopSpawning;
+    [SerializeField]private bool stopSpawning;
 
     [SerializeField] private GameManager gameManager;
     [SerializeField] private IntVariable coinsSurvived;
@@ -15,12 +15,14 @@ public class SpawnCoins : MonoBehaviour {
     //REFERENCE VIDEO https://www.youtube.com/watch?v=1h2yStilBWU&t=213s
 
     private void Start() {
+        StartGame();
+    }
+
+    private void StartGame() {
         coinsSurvived.IntValue = 0;
         stopSpawning = false;
         InvokeRepeating("SpawnCoin", spawnTime, spawnDelay);
     }
-
-    
 
     public void SpawnCoin() {
         coinPool[coinsSurvived.IntValue].SetActive(true);
@@ -36,13 +38,25 @@ public class SpawnCoins : MonoBehaviour {
         }
     }
 
-    public void ResetCoins(GameState currentState) {
+    public void GameOver(GameState currentState) {
         if (currentState == GameState.GameOver) {
-            stopSpawning = true;
-            coinsSurvived.IntValue = 0;
-            foreach (var coin in coinPool) {
-                coin.gameObject.SetActive(false);
-            }
+            ResetCoins();
+        }
+    }
+
+    public void RestartGame(GameState currentState) {
+        if (currentState == GameState.Playing) {
+           // ResetCoins();
+            stopSpawning = false;
+            StartGame();
+        }
+    }
+
+    private void ResetCoins() {
+        stopSpawning = true;
+        coinsSurvived.IntValue = 0;
+        foreach (var coin in coinPool) {
+            coin.gameObject.SetActive(false);
         }
     }
 }

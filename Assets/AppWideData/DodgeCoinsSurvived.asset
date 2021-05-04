@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b561da4ef966a4c42a0db0bf10620d53, type: 3}
   m_Name: DodgeCoinsSurvived
   m_EditorClassIdentifier: 
-  intValue: 4
+  intValue: 0

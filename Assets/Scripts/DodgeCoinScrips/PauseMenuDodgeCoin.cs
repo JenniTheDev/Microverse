@@ -61,8 +61,8 @@ public class PauseMenuDodgeCoin : MonoBehaviour
             
             minutes = ((int)t / 60).ToString();
             seconds = (t % 60).ToString("f2"); //only prints two leading digits
-            timerText.text = minutes + ":" + seconds;
-            timeSurvivedText.text = "You have survived " + minutes + " minutes & " + seconds + " seconds!";
+            //timerText.text = minutes + ":" + seconds;
+            //timeSurvivedText.text = "You have survived " + minutes + " minutes & " + seconds + " seconds!";
         }
     }
 
