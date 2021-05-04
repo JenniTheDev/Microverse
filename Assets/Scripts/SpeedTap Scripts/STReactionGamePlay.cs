@@ -49,18 +49,13 @@ public class STReactionGamePlay : MonoBehaviour
         // run function if lvl 2
         if (currentLevel.name == lvl2)
         {
-            MovingTargetHit();
-
-           /* if(PauseMenu.GameIsPaused)
+            // sets obj to inactive when game is paused 
+            if (!PauseMenu.GameIsPaused)
             {
-                //movingTarget.SetActive(false);
-                
+                MovingTargetHit();
             }
-            else
-            {
-                //movingTarget.SetActive(true);
-                
-            }*/
+            
+
         }
         
     }

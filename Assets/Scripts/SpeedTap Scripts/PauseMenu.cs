@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
         if(GameIsPaused)
         {
             Pause();
+           
         }
         else
         {
@@ -23,7 +24,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         currentGame.SetActive(false);
-       // highscoreUI.SetActive(false);
+        //highscoreUI.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true; 
     }
@@ -34,7 +35,8 @@ public class PauseMenu : MonoBehaviour
         currentGame.SetActive(true);
         //highscoreUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false; 
+        GameIsPaused = false;
+        
     }
 
 
@@ -43,10 +45,11 @@ public class PauseMenu : MonoBehaviour
     public void HighscoreScreen()
     {
         highscoreUI.SetActive(true);
-        pauseMenuUI.SetActive(true);
+        pauseMenuUI.SetActive(false);
         currentGame.SetActive(false);
         Time.timeScale = 0f;
-        GameIsPaused = false;
-    }
-  */
+        GameIsPaused = true;
+       
+    }*/
+  
 }
