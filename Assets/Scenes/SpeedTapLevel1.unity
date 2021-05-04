@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -287.2213, y: 169.85016}
+  m_AnchoredPosition: {x: -332.6104, y: 180.6678}
   m_SizeDelta: {x: 78.8991, y: 33.7003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82438243
@@ -1014,11 +1014,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2201403779959364838, guid: 6b778299fda06c54aba89957d1cc21ec, type: 3}
   m_PrefabInstance: {fileID: 1084342379}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1294858919 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2201403781277678173, guid: 6b778299fda06c54aba89957d1cc21ec, type: 3}
-  m_PrefabInstance: {fileID: 1084342379}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1492256465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 285, y: 171}
+  m_AnchoredPosition: {x: 313, y: 183}
   m_SizeDelta: {x: 80.2645, y: 33.7003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492256467
@@ -1541,8 +1536,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 400, y: 224.97}
-  m_SizeDelta: {x: 800, y: 449.94}
+  m_AnchoredPosition: {x: 400, y: 233.86}
+  m_SizeDelta: {x: 800, y: 467.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1999680297
 GameObject:
@@ -1810,22 +1805,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &2128195644 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2201403781216641004, guid: 6b778299fda06c54aba89957d1cc21ec, type: 3}
-  m_PrefabInstance: {fileID: 1084342379}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2128195649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128195644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e03c2bf9582d9b548a974e5c36f9f61e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 1294858919}
-  currentGame: {fileID: 2063752098}
