@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69db666b4c52bfc429bcb6d7754edf42, type: 3}
-  m_Name: DodgeGameManager
+  m_Script: {fileID: 11500000, guid: b561da4ef966a4c42a0db0bf10620d53, type: 3}
+  m_Name: DodgeCoinsSurvived
   m_EditorClassIdentifier: 
-  currentState: 2
-  onGameStateChange: {fileID: 11400000, guid: 1b9984092756ece47a3e7d85512b7688, type: 2}
+  intValue: 4
