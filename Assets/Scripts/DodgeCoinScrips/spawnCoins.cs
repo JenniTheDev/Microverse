@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnCoins : MonoBehaviour
+public class SpawnCoins : MonoBehaviour
 {
     public GameObject spawnee;
     public bool stopSpawning = false;
