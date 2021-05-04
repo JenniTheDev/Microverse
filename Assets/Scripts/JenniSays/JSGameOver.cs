@@ -11,6 +11,8 @@ namespace JenniSays {
         [SerializeField] private IntVariable score;
         [SerializeField] private string finalScore;
         [SerializeField] private TMP_Text finalScoreText;
+        [SerializeField] private TMP_Text highestScoreText;
+        private int highestScore = 0;
 
         public void GameOver(GameState currentState) {
             if (currentState == GameState.GameOver) {
@@ -26,10 +28,14 @@ namespace JenniSays {
         }
 
         private void DisplayHighScores() {
+            if (score.IntValue > highestScore) {
+                highestScore = score.IntValue;
+            }
+            highestScoreText.text = $"Your best score is {highestScore}";
         }
 
         private void DisplayFinalScore() {
-            finalScore = score.GetValue().ToString();
+            finalScore = score.IntValue.ToString();
             finalScoreText.text = $"Final Score {finalScore}";
         }
     }
