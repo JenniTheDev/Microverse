@@ -20,6 +20,7 @@ public class STReactionGamePlay : MonoBehaviour
     private Scene currentLevel; 
     public Text fastestTime;
     public SpeedTapScoresLevel1 score = new SpeedTapScoresLevel1();
+    public SpeedTapScoresLevel2 score2 = new SpeedTapScoresLevel2();
 
     private const string lvl1 = "SpeedTapLevel1", lvl2 = "SpeedTapLevel2";
 
@@ -55,7 +56,6 @@ public class STReactionGamePlay : MonoBehaviour
                 MovingTargetHit();
             }
             
-
         }
         
     }
@@ -114,10 +114,17 @@ public class STReactionGamePlay : MonoBehaviour
                 resultText.text = "Reaction time:\n" + reactionTime.ToString("N3") + "sec\n" + "Click button to start again";
 
                 // Compare scores for save 
-                SaveHighScore(reactionTime);
-                Debug.Log(reactionTime);
+                if (currentLevel.name == lvl1)
+                {
+                    SaveHighScore(reactionTime);
+                }
+                else if(currentLevel.name == lvl2)
+                {
+                    SaveHighScore2(reactionTime);
+                }
 
-            clockIsTicking = false;     
+
+                clockIsTicking = false;     
 
             }
             else if (clockIsTicking && !timerCanBeStopped)
@@ -129,7 +136,6 @@ public class STReactionGamePlay : MonoBehaviour
                 timerCanBeStopped = true;
                 resultText.text = "Too early\n" + "Click Button to start again";
                 
-
             }
         
         
@@ -176,7 +182,7 @@ public class STReactionGamePlay : MonoBehaviour
             SaveManager.Save(score);
             Debug.Log(score.highScore2);
         }
-        else if (score.highScore3 > value)
+        else if (score.highScore3 > value || score.highScore3 == 0f)
         {
             // moving highscore values down and setting new high score 
             score.highScore3 = value;
@@ -187,6 +193,50 @@ public class STReactionGamePlay : MonoBehaviour
         }
 
         
+        // if the value is not greater than highscore 3 then it should not be added 
+    }
+
+    /* Warning redundant code */
+
+    private void SaveHighScore2(float value)
+    {
+        /* Loading save data to object, if does not exist default values will be zero */
+        score2 = SaveManager.Load2();
+
+
+        if (score2.highScore1 > value || score2.highScore1 == 0f)
+        {
+            // moving highscore values down and setting new high score 
+            score2.highScore3 = score.highScore2;
+            score2.highScore2 = score.highScore1;
+            score2.highScore1 = value;
+
+            // save updated scores to the save file 
+            SaveManager.Save2(score2);
+            Debug.Log(score2.highScore1);
+
+        }
+        else if (score2.highScore2 > value || score2.highScore2 == 0f)
+        {
+            // moving highscore values down and setting new high score 
+            score2.highScore3 = score2.highScore2;
+            score2.highScore2 = value;
+
+            // save updated scores to the save file 
+            SaveManager.Save2(score2);
+            Debug.Log(score2.highScore2);
+        }
+        else if (score2.highScore3 > value || score2.highScore3 == 0f)
+        {
+            // moving highscore values down and setting new high score 
+            score2.highScore3 = value;
+
+            // save updated scores to the save file 
+            SaveManager.Save2(score2);
+            Debug.Log(score2.highScore3);
+        }
+
+
         // if the value is not greater than highscore 3 then it should not be added 
     }
 
