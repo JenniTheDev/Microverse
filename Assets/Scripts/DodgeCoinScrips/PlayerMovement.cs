@@ -23,10 +23,13 @@ public class PlayerMovement : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D col)
    
     {
-        if (this.gameObject.tag== "Player" && col.gameObject.tag == "coin");
-        {
-            collided = true;
-        }
+        //if (this.gameObject.tag== "Player" && col.gameObject.tag == "coin");
+        //{
+        //    collided = true;
+        //}
+
+        // just call game over here
+        Debug.Log("game over");
         
     }
 
@@ -36,13 +39,13 @@ public class PlayerMovement : MonoBehaviour
     // Will handle input
     public void Update()
     {
-        
-        //checks to see if a collision happens with a coin
-        if(collided)
-        {
-            Panel_gameOver.SetActive(true);
-            Time.timeScale = 0;
-        }
+        // This can be handled on coin
+        ////checks to see if a collision happens with a coin
+        //if(collided)
+        //{
+        //    Panel_gameOver.SetActive(true);
+        //    Time.timeScale = 0;
+        //}
         
 
         
