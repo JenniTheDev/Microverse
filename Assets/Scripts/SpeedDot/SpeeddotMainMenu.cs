@@ -54,7 +54,7 @@ public class SpeeddotMainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("Populate");
+        //Debug.Log("Populate");
         SpeedDotConnector2D.SetActive(true);
         SpeedDots.SetActive(true);
         
