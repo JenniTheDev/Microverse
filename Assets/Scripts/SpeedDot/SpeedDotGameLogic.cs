@@ -26,7 +26,7 @@ namespace SpeedDot {
 
         [SerializeField]
         private Transform dotsContainer;
-
+        [SerializeField]
         private List<SpeedDot> dotsToConnect;
 
         [SerializeField]
