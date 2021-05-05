@@ -1,10 +1,8 @@
-
 using TMPro;
 using UnityEngine;
 using Variables;
 
-public class CoinsSurvivedScore : MonoBehaviour
-{
+public class CoinsSurvivedScore : MonoBehaviour {
     [SerializeField] private IntVariable score;
     [SerializeField] private TMP_Text scoreText;
 

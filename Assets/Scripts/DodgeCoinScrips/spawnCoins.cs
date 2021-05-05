@@ -7,7 +7,7 @@ public class SpawnCoins : MonoBehaviour {
     [SerializeField] private float spawnDelay = 0.1f;
     [SerializeField] private float spawnTime = 5f;
 
-    [SerializeField]private bool stopSpawning;
+    [SerializeField] private bool stopSpawning;
 
     [SerializeField] private GameManager gameManager;
     [SerializeField] private IntVariable coinsSurvived;
@@ -29,7 +29,7 @@ public class SpawnCoins : MonoBehaviour {
         //Instantiate(coinPool[coinsSurvived.IntValue], transform.position, transform.rotation);
 
         coinsSurvived.IntValue++;
-        if (coinsSurvived.IntValue++ == coinPool.Count - 1) {
+        if (coinsSurvived.IntValue == coinPool.Count - 1) {
             gameManager.EndGame();
         }
 
@@ -40,21 +40,24 @@ public class SpawnCoins : MonoBehaviour {
 
     public void GameOver(GameState currentState) {
         if (currentState == GameState.GameOver) {
+            CancelInvoke("SpawnCoin");
+            stopSpawning = true;
             ResetCoins();
         }
     }
 
     public void RestartGame(GameState currentState) {
         if (currentState == GameState.Playing) {
-           // ResetCoins();
+            //ResetCoins();
             stopSpawning = false;
             StartGame();
         }
     }
 
     private void ResetCoins() {
-        stopSpawning = true;
-        coinsSurvived.IntValue = 0;
+        //stopSpawning = false;
+        // coinsSurvived.IntValue = 0;
+
         foreach (var coin in coinPool) {
             coin.gameObject.SetActive(false);
         }

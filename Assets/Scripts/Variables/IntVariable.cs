@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Variables {
     [CreateAssetMenu(fileName = "New Game Variable (Int)", menuName = "Game Variable/New Game Variable (Int)")]
     public class IntVariable : ScriptableObject {
-        [SerializeField]private int intValue;
+        [SerializeField] private int intValue;
 
         public int IntValue {
             get { return this.intValue; }

@@ -1,9 +1,9 @@
 using UnityEngine;
 
 public class Coin : MonoBehaviour {
-    public float speed = 400.0f;
+    public float speed = 40.0f;
     private Rigidbody2D rb;
-    private Vector2 screenBounds;
+    //private Vector2 screenBounds;
 
     // Use this for initialization
     private void Start() {
@@ -18,7 +18,7 @@ public class Coin : MonoBehaviour {
     }
 
     private void OnEnable() {
-        int randNum = Random.Range(-1, 2);
+        float randNum = Random.Range(-1, 2);
         if (randNum == 0) {
             randNum++;
         }

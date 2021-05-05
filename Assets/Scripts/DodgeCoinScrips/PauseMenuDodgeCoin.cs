@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class PauseMenuDodgeCoin : MonoBehaviour
-{
+public class PauseMenuDodgeCoin : MonoBehaviour {
+
     //Pause menu variables
     public static bool GameIsPaused = false;
+
     public GameObject pauseMenuUI;
     public bool isPaused = false;
-
 
     //Timer variables//
     /*Reference https://www.youtube.com/watch?v=x-C95TuQtf0 */
@@ -28,37 +25,31 @@ public class PauseMenuDodgeCoin : MonoBehaviour
     public string survivedSeconds;
 
     public float t;
-    
+
     //gets starting time
-    void Start()
-    {
+    private void Start() {
         isPaused = false;
         startTime = Time.time;
     }
 
     //Updates time when running
-    void Update()
-    {
+    private void Update() {
         //If paused display paused time else display running time
-        if (isPaused) 
-        {
-            //place holder block of code until a dead/game over state is implemented. 
+        if (isPaused) {
+            //place holder block of code until a dead/game over state is implemented.
             //time survived will be paused time
             survivedMinutes = minutes;
             survivedSeconds = seconds;
             //timeSurvivedText.text = "You have survived "+ survivedMinutes + ":" + survivedSeconds;
-            
 
             //
 
             pausedMinutes = minutes;
             pausedSeconds = seconds;
             timerText.text = pausedMinutes + ":" + pausedSeconds;
-        }
-        else
-        {
+        } else {
             t = Time.time - startTime;
-            
+
             minutes = ((int)t / 60).ToString();
             seconds = (t % 60).ToString("f2"); //only prints two leading digits
             //timerText.text = minutes + ":" + seconds;
@@ -66,33 +57,26 @@ public class PauseMenuDodgeCoin : MonoBehaviour
         }
     }
 
-
-
-
-
     //resumes the game
-    public void Resume()
-    {
+    public void Resume() {
         Time.timeScale = 1;
         isPaused = false;
-      
+
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
     }
 
     //pauses the game
-    public void Pause()
-    {
+    public void Pause() {
         Time.timeScale = 0;
         isPaused = true;
-    
+
         pauseMenuUI.SetActive(true);
         GameIsPaused = true;
     }
 
     //quits the game
-    public void Quit()
-    {
+    public void Quit() {
         Application.Quit();
     }
 }
