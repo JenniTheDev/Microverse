@@ -54,5 +54,8 @@ Known in class as "Group F"
 
 ## Project Documentation <a name="Docs"></a> <br>
 [Prototype Presentation](https://jennithe.dev/Microverse/Documentation/PrototypeSlides.pdf "Slides from our prototype presentation") </br>
+[Iteration One Deliverables](https://jennithe.dev/Microverse/Documentation/IterationOne.pdf "Notes from what we did for Iteration One of four") </br>
+[Iteration Two Deliverables](https://jennithe.dev/Microverse/Documentation/IterationTwo.pdf "Notes from what we did for Iteration Two of four") </br>
+[Iteration Three Deliverables](https://jennithe.dev/Microverse/Documentation/IterationThree.pdf "Notes from what we did for Iteration Three of four") </br>
 
 ## Acknowledgements <a name="Ack"></a> <br>
