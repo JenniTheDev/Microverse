@@ -174,7 +174,7 @@ public class STReactionGamePlay : MonoBehaviour
 
             // save updated scores to the save file 
             SaveManager.Save(score);
-            Debug.Log(score.highScore1);
+           // Debug.Log(score.highScore1);
 
         }
         else if (score.highScore2 > value || score.highScore2 == 0f)
@@ -185,7 +185,7 @@ public class STReactionGamePlay : MonoBehaviour
 
             // save updated scores to the save file 
             SaveManager.Save(score);
-            Debug.Log(score.highScore2);
+           // Debug.Log(score.highScore2);
         }
         else if (score.highScore3 > value || score.highScore3 == 0f)
         {
@@ -194,7 +194,7 @@ public class STReactionGamePlay : MonoBehaviour
 
             // save updated scores to the save file 
             SaveManager.Save(score);
-            Debug.Log(score.highScore3);
+            //Debug.Log(score.highScore3);
         }
 
         
@@ -218,7 +218,7 @@ public class STReactionGamePlay : MonoBehaviour
 
             // save updated scores to the save file 
             SaveManager.Save2(score2);
-            Debug.Log(score2.highScore1);
+           // Debug.Log(score2.highScore1);
 
         }
         else if (score2.highScore2 > value || score2.highScore2 == 0f)
@@ -229,7 +229,7 @@ public class STReactionGamePlay : MonoBehaviour
 
             // save updated scores to the save file 
             SaveManager.Save2(score2);
-            Debug.Log(score2.highScore2);
+            //Debug.Log(score2.highScore2);
         }
         else if (score2.highScore3 > value || score2.highScore3 == 0f)
         {
@@ -238,7 +238,7 @@ public class STReactionGamePlay : MonoBehaviour
 
             // save updated scores to the save file 
             SaveManager.Save2(score2);
-            Debug.Log(score2.highScore3);
+           // Debug.Log(score2.highScore3);
         }
 
 
