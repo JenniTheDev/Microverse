@@ -1110,7 +1110,6 @@ GameObject:
   - component: {fileID: 512637889}
   - component: {fileID: 512637891}
   - component: {fileID: 512637892}
-  - component: {fileID: 512637893}
   m_Layer: 6
   m_Name: DodgePlayer
   m_TagString: Untagged
@@ -1227,7 +1226,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512637886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7820563d0cabb54594359dfa7a0a867, type: 3}
   m_Name: 
@@ -1242,29 +1241,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512637886}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc23a901a2d0d8142b3ae02b1f44eef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
   gameManager: {fileID: 11400000, guid: e7c4e53671b626a4e853f3ffccc147e5, type: 2}
---- !u!114 &512637893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512637886}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7f200beca51aa3488da9f79e31f72f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  gameManager: {fileID: 11400000, guid: e7c4e53671b626a4e853f3ffccc147e5, type: 2}
-  movementSpeed: 200
-  collided: 0
 --- !u!1 &559334976
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,7 +3134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -153.4}
+  m_AnchoredPosition: {x: 0, y: -133.5}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1361126894
@@ -4891,7 +4874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1077930045562219870, guid: 4f12d0a2060ee61478bb84ce75a0b1a9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -88.89996
+      value: -65
       objectReference: {fileID: 0}
     - target: {fileID: 1077930045562219870, guid: 4f12d0a2060ee61478bb84ce75a0b1a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
