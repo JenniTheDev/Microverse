@@ -59,7 +59,7 @@ namespace JenniSays {
             orderToMatch = new List<JSButton>();
             gameLevel = initialLevel;
             currentIndex = 0;
-            score.SetValue(1);
+            score.IntValue = 1;
             RemoveBonusButtons();
         }
 
@@ -132,7 +132,8 @@ namespace JenniSays {
             }
             currentIndex = 0;
             gameLevel++;
-            score.SetValue(gameLevel);
+            // score.SetValue(gameLevel);
+            score.IntValue = gameLevel;
             currentMode = GameMode.PlayingBack;
             pauseBetweenLevels *= speedIncrease;
             gameManager.PlayGame();
