@@ -50,7 +50,7 @@ public class MovingButton : MonoBehaviour
         }
 
         
-       // Debug.Log(targetPosition);
+       
     }
 
 }

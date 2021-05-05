@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class coin : MonoBehaviour
+public class Coin : MonoBehaviour
 {
     public float speed = 400.0f;
     private Rigidbody2D rb;
@@ -35,4 +35,6 @@ public class coin : MonoBehaviour
         }
         
     }
+
+
 }
