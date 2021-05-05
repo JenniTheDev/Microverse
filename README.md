@@ -33,7 +33,7 @@ Known in class as "Group F"
 
 ## The Games <a name="Games"></a> <br>
 
-* DodgeCoin - A 2D game where the player controls dodge and must avpod randomly bounching coins
+* DodgeCoin - A 2D game where the player controls dodge and must avoid randomly bounching coins
   - Has a countdown timer that counts down the time to survive
   - Coins increase in speed and amound as the timer counts down
 
@@ -43,8 +43,8 @@ Known in class as "Group F"
   - Leaderboard will display high scores with times to beat
 
 * SpeedDot - A 2D game with speed dot to dot
-  - Connect the dots to make the shapes as fast as possible
-  - Shapes increase in difficulty as time goes on
+  - Connect the dots as fast as possible
+  - Number of dots increase as time goes on
   - Leaderboard will display high scores with times to beat
 
 * JenniSays - A 2D memory game with infinite levels 
