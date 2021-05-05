@@ -38,16 +38,16 @@ namespace SpeedDot {
         private GameMode currentMode = GameMode.NONE;
 
         private void Start() {
-            Debug.Log("Game Starting");
+            // Debug.Log("Game Starting");
             PopulateGameDotsList();
             ResetGame();
             AddRandomDots(gameLevel);
             StartCoroutine(PlayButtonSequence(dotsToConnect, speedIncrease));
-            Debug.Log("Game Starting Finished");
+           // Debug.Log("Game Starting Finished");
         }
 
         private void PopulateGameDotsList() {
-            Debug.Log("Populate gameDots list start");
+           // Debug.Log("Populate gameDots list start");
             gameDots = new List<SpeedDot>();
             SpeedDot dotToAdd;
             foreach (Transform child in dotsContainer) {
@@ -68,7 +68,7 @@ namespace SpeedDot {
 
         public void StartGame() {
             StartCoroutine(PlayButtonSequence(dotsToConnect, speedIncrease));
-            Debug.Log("StartGame() in speeddot gamelogic fired");
+           // Debug.Log("StartGame() in speeddot gamelogic fired");
         }
 
         private void AddRandomDot() {
@@ -91,7 +91,7 @@ namespace SpeedDot {
 
             // Game Manager Broadcast Game Over
             //ResetGame();
-            Debug.Log("Game Over moving to highscore table.");
+           // Debug.Log("Game Over moving to highscore table.");
 
             //Game Manager tells Menu manager to send score over to leaderboard. Renders leaderboad. 
             SDMenuMan.EndGametoHighScore();
@@ -118,7 +118,7 @@ namespace SpeedDot {
         }
 
         private void NextLevel() {
-            Debug.Log("Next Level");
+           // Debug.Log("Next Level");
 
             gameLevel++;
             currentMode = GameMode.PlayingBack;

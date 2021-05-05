@@ -135,7 +135,7 @@ public class SpeedDotHighScoreTable : MonoBehaviour
 
         if (highscores.highscoreEntryList.Count < 10) // If there are less than 10 entries
         {
-            Debug.Log("Add the score anyway");
+           // Debug.Log("Add the score anyway");
             // We add the score anyway
             AddHighscoreEntry(timergiven, "AAA");
          
@@ -147,17 +147,17 @@ public class SpeedDotHighScoreTable : MonoBehaviour
                 
                 while (highscores.highscoreEntryList.Count > 10)
                 {
-                    Debug.Log("Removed a score");
+                  //  Debug.Log("Removed a score");
                     highscores.highscoreEntryList.RemoveAt(10);
                 }
-                Debug.Log("Add the score, they deserve it");
+               // Debug.Log("Add the score, they deserve it");
                 //We add the score
                 AddHighscoreEntry(timergiven, "AAA");
                 //We then delete the 11th entry
             }
             else
             {
-                Debug.Log("Score Rejected");
+               // Debug.Log("Score Rejected");
                 // We don't add the score.
             }
         }
@@ -175,17 +175,17 @@ public class SpeedDotHighScoreTable : MonoBehaviour
 
         if (PlayerPrefs.GetString("highscoreTable", "None") == "None")
         {
-            Debug.Log("HighscoreTable not found");
+           // Debug.Log("HighscoreTable not found");
 
             Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
             string json = JsonUtility.ToJson(highscores);
             PlayerPrefs.SetString("highscoreTable", json);
             PlayerPrefs.Save();
-            Debug.Log(PlayerPrefs.GetString("highscoreTable"));
+           // Debug.Log(PlayerPrefs.GetString("highscoreTable"));
         }
         else
         {
-            Debug.Log("HighscoreTable found");
+           // Debug.Log("HighscoreTable found");
         }
 
 

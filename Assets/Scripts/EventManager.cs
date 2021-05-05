@@ -16,7 +16,7 @@ public class EventManager : MonoBehaviour {
         }
     }
 
-    
+
 
     #endregion Singleton
 
