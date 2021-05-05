@@ -1410,6 +1410,7 @@ GameObject:
   - component: {fileID: 583755225}
   - component: {fileID: 583755224}
   - component: {fileID: 583755223}
+  - component: {fileID: 583755226}
   m_Layer: 5
   m_Name: Button_mainMenu
   m_TagString: Untagged
@@ -1481,8 +1482,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BackButton, Assembly-CSharp
+      - m_Target: {fileID: 583755226}
+        m_TargetAssemblyTypeName: BackToSwipeButton, Assembly-CSharp
         m_MethodName: ToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -1531,6 +1532,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583755221}
   m_CullTransparentMesh: 1
+--- !u!114 &583755226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583755221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a4c285d7b4d8f4fafbf5e73c28eceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &633123634 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1077930045562219870, guid: 4f12d0a2060ee61478bb84ce75a0b1a9, type: 3}
@@ -3754,6 +3767,10 @@ PrefabInstance:
     - target: {fileID: 6291239409975283645, guid: 477f4cab558871a4c960fd45f315c6db, type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291239409975283645, guid: 477f4cab558871a4c960fd45f315c6db, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6291239409975283645, guid: 477f4cab558871a4c960fd45f315c6db, type: 3}
       propertyPath: m_IsActive
