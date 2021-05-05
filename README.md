@@ -53,6 +53,6 @@ Known in class as "Group F"
   - Leaderboard will display high scores with number to beat
 
 ## Project Documentation <a name="Docs"></a> <br>
-Completed Documentation will be put here
+[Prototype Presentation](https://jennithedev.github.io/Microverse/Docs/Microverse Prototype Slides.pdf)"Slides from our prototype presentation" </br>
 
 ## Acknowledgements <a name="Ack"></a> <br>
