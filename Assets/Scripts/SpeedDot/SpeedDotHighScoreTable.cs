@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class SpeedDotHighScoreTable : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class SpeedDotHighScoreTable : MonoBehaviour
     private Transform entryContainer;
     private Transform entryTemplate;
     private List<Transform> highscoreEntryTransformList;
+    private List<HighScoreEntry> highscoreEntryList;
 
     void Awake()
     {
+        HighScoreTableCheck();
         entryContainer = transform.Find("HighScoreEntryContainer");
         entryTemplate = entryContainer.Find("HighScoreEntryTemplate");
 
@@ -37,6 +40,7 @@ public class SpeedDotHighScoreTable : MonoBehaviour
 
     private Highscores SortHighscores(Highscores highscores)
     {
+        HighScoreTableCheck();
         for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
         {
             for (int j = i + 1; j < highscores.highscoreEntryList.Count; j++)
@@ -80,7 +84,7 @@ public class SpeedDotHighScoreTable : MonoBehaviour
 
         float score = highscoreEntry.score;
 
-        entryTransform.Find("Time").GetComponent<Text>().text = score.ToString();
+        entryTransform.Find("Time").GetComponent<Text>().text = score.ToString("00.0");
 
        //string name = highscoreEntry.name;
        //entryTransform.Find("Name").GetComponent<Text>().text = name;
@@ -91,6 +95,7 @@ public class SpeedDotHighScoreTable : MonoBehaviour
 
     public void AddHighscoreEntry(float score, string name)
     {
+        
         // Create highscorenetry
         HighScoreEntry highscoreEntry = new HighScoreEntry { score = score, name = name };
 
@@ -130,6 +135,7 @@ public class SpeedDotHighScoreTable : MonoBehaviour
 
         if (highscores.highscoreEntryList.Count < 10) // If there are less than 10 entries
         {
+            Debug.Log("Add the score anyway");
             // We add the score anyway
             AddHighscoreEntry(timergiven, "AAA");
          
@@ -138,13 +144,20 @@ public class SpeedDotHighScoreTable : MonoBehaviour
         {
             if (timergiven < highscores.highscoreEntryList[highscores.highscoreEntryList.Count - 1].score)
             {
+                
+                while (highscores.highscoreEntryList.Count > 10)
+                {
+                    Debug.Log("Removed a score");
+                    highscores.highscoreEntryList.RemoveAt(10);
+                }
+                Debug.Log("Add the score, they deserve it");
                 //We add the score
                 AddHighscoreEntry(timergiven, "AAA");
                 //We then delete the 11th entry
-                highscores.highscoreEntryList.RemoveAt(10);
             }
             else
             {
+                Debug.Log("Score Rejected");
                 // We don't add the score.
             }
         }
@@ -155,6 +168,29 @@ public class SpeedDotHighScoreTable : MonoBehaviour
         public List<HighScoreEntry> highscoreEntryList;
     }
 
+
+    public void HighScoreTableCheck()
+    {
+        
+
+        if (PlayerPrefs.GetString("highscoreTable", "None") == "None")
+        {
+            Debug.Log("HighscoreTable not found");
+
+            Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
+            string json = JsonUtility.ToJson(highscores);
+            PlayerPrefs.SetString("highscoreTable", json);
+            PlayerPrefs.Save();
+            Debug.Log(PlayerPrefs.GetString("highscoreTable"));
+        }
+        else
+        {
+            Debug.Log("HighscoreTable found");
+        }
+
+
+
+    }
 
     /*Represents a single high score entry*/
     [System.Serializable]
