@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace SpeedDot {
+
+    
     public class SpeedDotGameLogic : MonoBehaviour {
+        // Definitely could be done better, "don't @ me."
+        public GameObject menuManager;
+        private SpeeddotMainMenu SDMenuMan;
+        //==========================================
 
         private enum GameMode {
             NONE, PlayingBack, Receiving
@@ -20,7 +26,7 @@ namespace SpeedDot {
 
         [SerializeField]
         private Transform dotsContainer;
-
+        [SerializeField]
         private List<SpeedDot> dotsToConnect;
 
         [SerializeField]
@@ -32,13 +38,16 @@ namespace SpeedDot {
         private GameMode currentMode = GameMode.NONE;
 
         private void Start() {
+            // Debug.Log("Game Starting");
             PopulateGameDotsList();
             ResetGame();
             AddRandomDots(gameLevel);
             StartCoroutine(PlayButtonSequence(dotsToConnect, speedIncrease));
+           // Debug.Log("Game Starting Finished");
         }
 
         private void PopulateGameDotsList() {
+           // Debug.Log("Populate gameDots list start");
             gameDots = new List<SpeedDot>();
             SpeedDot dotToAdd;
             foreach (Transform child in dotsContainer) {
@@ -57,8 +66,9 @@ namespace SpeedDot {
             ResetDots();
         }
 
-        private void StartGame() {
+        public void StartGame() {
             StartCoroutine(PlayButtonSequence(dotsToConnect, speedIncrease));
+           // Debug.Log("StartGame() in speeddot gamelogic fired");
         }
 
         private void AddRandomDot() {
@@ -77,9 +87,21 @@ namespace SpeedDot {
         }
 
         private void GameOver() {
+            SDMenuMan = menuManager.GetComponent<SpeeddotMainMenu>();
+
             // Game Manager Broadcast Game Over
-            ResetGame();
-            Debug.Log("Start Over");
+            //ResetGame();
+           // Debug.Log("Game Over moving to highscore table.");
+
+            //Game Manager tells Menu manager to send score over to leaderboard. Renders leaderboad. 
+            SDMenuMan.EndGametoHighScore();
+
+            
+        }
+
+        public void DebugGameOver()
+        {
+            GameOver();
         }
 
         private IEnumerator PlayButtonSequence(List<SpeedDot> dots, float pauseTime) {
@@ -96,7 +118,7 @@ namespace SpeedDot {
         }
 
         private void NextLevel() {
-            Debug.Log("Next Level");
+           // Debug.Log("Next Level");
 
             gameLevel++;
             currentMode = GameMode.PlayingBack;

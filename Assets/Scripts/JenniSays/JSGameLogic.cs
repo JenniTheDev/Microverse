@@ -115,7 +115,6 @@ namespace JenniSays {
                 selectedButton.ButtonAnimation.Play();
                 PlayButtonAudio(selectedButton);
                 if (selectedButton == orderToMatch[currentIndex]) {
-                    Debug.Log("Match");
                     currentIndex++;
                 } else {
                     GameOver();
