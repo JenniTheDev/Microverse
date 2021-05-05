@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Variables;
 
 namespace JenniSays {
     public class JSGameLogic : MonoBehaviour {
@@ -14,28 +15,40 @@ namespace JenniSays {
         private int gameLevel = 1;
 
         [SerializeField]
+        private IntVariable score;
+
+        [SerializeField]
         private int initialLevel;
 
         [SerializeField]
         private int resetLevel;
 
         [SerializeField]
-        private float speedIncrease = 0.0f;
+        private int startBonusLevel;
+
+        [SerializeField]
+        private float speedIncrease = 0.2f;
 
         [SerializeField]
         private List<JSButton> gameButtons;
 
+        [SerializeField]
+        private List<JSButton> bonusButtons;
+
+        [SerializeField]
+        private AudioSource speaker;
+
         private List<JSButton> orderToMatch;
 
         private int currentIndex;
-        private float pauseBetweenLevels = 2.0f;
+        private float pauseBetweenLevels = 1.0f;
 
         private GameMode currentMode = GameMode.NONE;
 
+        [SerializeField] private GameManager gameManager;
+
         private void Start() {
             ResetGame();
-            AddRandomButtons(gameLevel);
-            StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
         }
 
         private void Update() {
@@ -46,10 +59,22 @@ namespace JenniSays {
             orderToMatch = new List<JSButton>();
             gameLevel = initialLevel;
             currentIndex = 0;
+            score.IntValue = 1;
+            RemoveBonusButtons();
         }
 
-        private void StartGame() {
-            StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
+        private void RemoveBonusButtons() {
+            foreach (var button in bonusButtons) {
+                button.gameObject.SetActive(false);
+                gameButtons.Remove(button);
+            }
+        }
+
+        public void StartGame(GameState currentState) {
+            if (currentState == GameState.Playing) {
+                AddRandomButton();
+                StartCoroutine(PlayButtonSequence(orderToMatch, speedIncrease));
+            }
         }
 
         private void AddRandomButton() {
@@ -64,9 +89,8 @@ namespace JenniSays {
         }
 
         private void GameOver() {
-            // Game Manager Broadcast Game Over
+            gameManager.EndGame();
             ResetGame();
-            Debug.Log("Start Over");
         }
 
         private IEnumerator PlayButtonSequence(List<JSButton> buttons, float pauseTime) {
@@ -81,8 +105,15 @@ namespace JenniSays {
         }
 
         public void ActivateButton(JSButton selectedButton) {
+            //if (speaker.isPlaying || selectedButton.ButtonAnimation.isPlaying) {
+            //    Debug.Log("Attempted to activate JSButton while already active");
+            //    return;
+            //}
             selectedButton.ButtonAnimation.Play();
+            PlayButtonAudio(selectedButton);
             if (this.currentMode == GameMode.Receiving && currentIndex < orderToMatch.Count) {
+                selectedButton.ButtonAnimation.Play();
+                PlayButtonAudio(selectedButton);
                 if (selectedButton == orderToMatch[currentIndex]) {
                     Debug.Log("Match");
                     currentIndex++;
@@ -96,12 +127,28 @@ namespace JenniSays {
         }
 
         private void NextLevel() {
-            Debug.Log("Next Level");
+            if (gameLevel == startBonusLevel) {
+                AddBonusButtons();
+            }
             currentIndex = 0;
             gameLevel++;
+            // score.SetValue(gameLevel);
+            score.IntValue = gameLevel;
             currentMode = GameMode.PlayingBack;
-            AddRandomButton();
-            StartGame();
+            pauseBetweenLevels *= speedIncrease;
+            gameManager.PlayGame();
+        }
+
+        private void AddBonusButtons() {
+            foreach (var button in bonusButtons) {
+                button.gameObject.SetActive(true);
+                gameButtons.Add(button);
+            }
+        }
+
+        private void PlayButtonAudio(JSButton buttonToPlay) {
+            speaker.clip = buttonToPlay.ButtonAudioClip;
+            speaker.Play();
         }
     }
 }
