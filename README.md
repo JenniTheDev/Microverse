@@ -62,4 +62,10 @@ Known in class as "Group F"
 - Button hover sounds are by NenadSimic from [OpenGameArt.Org](https://opengameart.org/content/menu-selection-click) and used under a Creative Commons license<br>
 - Button click sounds are by P0ss from [OpenGameArt.Org](https://opengameart.org/content/interface-sounds-starter-pack) and used under a Creative Commons license <br>
 - Microverse Background is from [PNG Tree Free Backgrounds](https://pngtree.com/freebackground/fantasy-cartoon-expanses-star-sea-galaxy-planet-cure-illustration-background_929872.html) <br>
-- Dodge Coin music is "A Journey Awaits" by [Pierre Bondoerffer(@pbondoer)](https://twitter.com/pbondoer) from [OpenGameArt.Org]("https://opengameart.org/content/a-journey-awaits") and used under a Creative Commons license <br>
+- Dodge Coin music is "A Journey Awaits" by [Pierre Bondoerffer(@pbondoer)](https://twitter.com/pbondoer) from [OpenGameArt.Org](https://opengameart.org/content/a-journey-awaits) and used under a Creative Commons license <br>
+- Game Over sound is by Zuvizu from [OpenGameArt.Org](https://opengameart.org/content/game-over-0) 
+- Menu Music is "House in a Forest" by HorrorPen from [OpenGameArt.Org](https://opengameart.org/content/loop-house-in-a-forest) and used under a Creative Commons license<br>
+- Jenni Says music is "Pleasant Creek" by [Matthew Pablo](http://www.matthewpablo.com) from [OpenGameArt.Org](https://opengameart.org/content/pleasant-creek) and used under a Creative Commons license<br>
+- Jenni Says fonts are Quenda by Marc Lohner from [Dafont](https://www.dafont.com/quenda.font)
+- Dodgecoin fonts are Swirly Kids by Hanif Syahputra from [Dafont](https://www.dafont.com/swirly-kids.font)
+- Thanks to [Brackeys](https://www.youtube.com/watch?v=zc8ac_qUXQY&t=1s), [Akbar Project](https://www.youtube.com/watch?v=GURPmGoAOoM), [Renaissance Coders](https://www.youtube.com/watch?v=1h2yStilBWU&t=213s), and [Alexander Zotov](https://www.youtube.com/watch?v=ST7BAqV-1ow) for the informative tutorials
