@@ -59,3 +59,7 @@ Known in class as "Group F"
 [Iteration Three Deliverables](https://jennithe.dev/Microverse/Documentation/IterationThree.pdf "Notes from what we did for Iteration Three of four") <br>
 
 ## Acknowledgements <a name="Ack"></a> <br>
+- Button hover sounds are by NenadSimic from [OpenGameArt.Org](https://opengameart.org/content/menu-selection-click) and used under a Creative Commons license<br>
+- Button click sounds are by P0ss from [OpenGameArt.Org](https://opengameart.org/content/interface-sounds-starter-pack) and used under a Creative Commons license <br>
+- Microverse Background is from [PNG Tree Free Backgrounds](https://pngtree.com/freebackground/fantasy-cartoon-expanses-star-sea-galaxy-planet-cure-illustration-background_929872.html) <br>
+- Dodge Coin music is "A Journey Awaits" by [Pierre Bondoerffer(@pbondoer)](https://twitter.com/pbondoer) from [OpenGameArt.Org]("https://opengameart.org/content/a-journey-awaits") and used under a Creative Commons license <br>
