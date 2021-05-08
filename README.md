@@ -54,6 +54,7 @@ Known in class as "Group F"
   
 <br>
 ![](https://media.giphy.com/media/bzvbDGvXneRRuIrcn4/giphy.gif)
+
 <br><br>
 
 * SpeedDot - A 2D game with speed dot to dot
