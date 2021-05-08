@@ -65,7 +65,7 @@ Known in class as "Group F"
   - Leaderboard will display high scores with times to beat
   <br>
   
-  ![](https://media.giphy.com/media/HMIJYp6Ubj09ahfceE/giphy.gif)
+ ![](https://media.giphy.com/media/HMIJYp6Ubj09ahfceE/giphy.gif)
   
 <br><br>
 
