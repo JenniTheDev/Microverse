@@ -51,8 +51,7 @@ Known in class as "Group F"
 * SpeedTap - A 2D game with a reaction timer that increases tap objects as time goes on
   - User must wait for the green screen to tap the given item
   - Users time is displayed in milliseconds
-  - Leaderboard will display high scores with times to beat
-  
+  - Leaderboard will display high scores with times to beat 
 <br>
 
 ![](https://media.giphy.com/media/bzvbDGvXneRRuIrcn4/giphy.gif)
