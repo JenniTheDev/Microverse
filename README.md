@@ -37,7 +37,7 @@ Known in class as "Group F"
   - Has a countdown timer that counts down the time to survive
   - Coins increase in speed and amound as the timer counts down
   
-<img src ="https://jennithe.dev/Microverse/Images/DodgeCoin.png" style = "width:50px;height:25px;" >
+<img src ="https://jennithe.dev/Microverse/Images/DodgeCoin.png" style = "width:20px;height:10px;" >
 
 * SpeedTap - A 2D game with a reaction timer that increases tap objects as time goes on
   - User must wait for the green screen to tap the given item
