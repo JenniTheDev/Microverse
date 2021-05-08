@@ -42,7 +42,8 @@ Known in class as "Group F"
 * DodgeCoin - A 2D game where the player controls dodge and must avoid randomly bounching coins
   - Has a countdown timer that counts down the time to survive
   - Coins increase in speed and amound as the timer counts down
-  <br>
+  <br> 
+  
 ![](https://media.giphy.com/media/ScIXHCBkOcH0T36bdK/giphy.gif)
 <br><br>
 
