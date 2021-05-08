@@ -32,6 +32,11 @@ Known in class as "Group F"
 <br><br>
 
 ## The Games <a name="Games"></a> <br>
+* Main Menu - FInd all the Microgames here
+  - Swipe menu with descriptions for all games
+ 
+ ![](https://media.giphy.com/media/T7JZIbvr6aluCbcP5S/giphy.gif)
+
 
 * DodgeCoin - A 2D game where the player controls dodge and must avoid randomly bounching coins
   - Has a countdown timer that counts down the time to survive
@@ -44,15 +49,21 @@ Known in class as "Group F"
   - Users time is displayed in milliseconds
   - Leaderboard will display high scores with times to beat
 
+![](https://media.giphy.com/media/bzvbDGvXneRRuIrcn4/giphy.gif)
+
 * SpeedDot - A 2D game with speed dot to dot
   - Connect the dots as fast as possible
   - Number of dots increase as time goes on
   - Leaderboard will display high scores with times to beat
+  
+  ![](https://media.giphy.com/media/HMIJYp6Ubj09ahfceE/giphy.gif)
 
 * JenniSays - A 2D memory game with infinite levels 
   - Follow what Jenni says and tap the pictures in order
   - An extra step is added with every level
   - Leaderboard will display high scores with number to beat
+
+![](https://media.giphy.com/media/GXCNFdRoJnxkoWsSSF/giphy.gif)
 
 ## Project Documentation <a name="Docs"></a> <br>
 [Prototype Presentation](https://jennithe.dev/Microverse/Documentation/PrototypeSlides.pdf "Slides from our prototype presentation") <br>
