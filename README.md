@@ -45,6 +45,7 @@ Known in class as "Group F"
  <br> 
   
 ![](https://media.giphy.com/media/ScIXHCBkOcH0T36bdK/giphy.gif)
+
 <br><br>
 
 * SpeedTap - A 2D game with a reaction timer that increases tap objects as time goes on
@@ -53,6 +54,7 @@ Known in class as "Group F"
   - Leaderboard will display high scores with times to beat
   
 <br>
+
 ![](https://media.giphy.com/media/bzvbDGvXneRRuIrcn4/giphy.gif)
 
 <br><br>
