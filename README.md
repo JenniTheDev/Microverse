@@ -45,6 +45,7 @@ Known in class as "Group F"
   <br>
 ![](https://media.giphy.com/media/ScIXHCBkOcH0T36bdK/giphy.gif)
 <br><br>
+
 * SpeedTap - A 2D game with a reaction timer that increases tap objects as time goes on
   - User must wait for the green screen to tap the given item
   - Users time is displayed in milliseconds
@@ -57,7 +58,9 @@ Known in class as "Group F"
   - Number of dots increase as time goes on
   - Leaderboard will display high scores with times to beat
   <br>
+  
   ![](https://media.giphy.com/media/HMIJYp6Ubj09ahfceE/giphy.gif)
+  
 <br><br>
 * JenniSays - A 2D memory game with infinite levels 
   - Follow what Jenni says and tap the pictures in order
@@ -66,6 +69,8 @@ Known in class as "Group F"
 <br>
 ![](https://media.giphy.com/media/GXCNFdRoJnxkoWsSSF/giphy.gif)
 <br><br>
+
+
 ## Project Documentation <a name="Docs"></a> <br>
 [Prototype Presentation](https://jennithe.dev/Microverse/Documentation/PrototypeSlides.pdf "Slides from our prototype presentation") <br>
 [Iteration One Deliverables](https://jennithe.dev/Microverse/Documentation/IterationOne.pdf "Notes from what we did for Iteration One of four") <br>
