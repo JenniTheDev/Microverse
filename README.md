@@ -36,7 +36,8 @@ Known in class as "Group F"
 * DodgeCoin - A 2D game where the player controls dodge and must avoid randomly bounching coins
   - Has a countdown timer that counts down the time to survive
   - Coins increase in speed and amound as the timer counts down
-[DodgeCoin](https://jennithe.dev/Microverse/Images/Dodgecoin.png)
+  
+<img src ="https://jennithe.dev/Microverse/Images/DodgeCoin.png" style = "width:50px;height:25px;" >
 
 * SpeedTap - A 2D game with a reaction timer that increases tap objects as time goes on
   - User must wait for the green screen to tap the given item
