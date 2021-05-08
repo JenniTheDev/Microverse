@@ -34,9 +34,10 @@ Known in class as "Group F"
 ## The Games <a name="Games"></a> <br>
 * Main Menu - FInd all the Microgames here
   - Swipe menu with descriptions for all games 
-  -<br>
+  <br>
  
  ![](https://media.giphy.com/media/T7JZIbvr6aluCbcP5S/giphy.gif)
+ 
 <br><br>
 
 * DodgeCoin - A 2D game where the player controls dodge and must avoid randomly bounching coins
