@@ -26,7 +26,7 @@ Known in class as "Group F"
 * Brian A. - [Portfolio](https://altbrian379.github.io/) - [Github](https://github.com/AltBrian379)
 * Dalisa N. - [Portfolio](https://dalisaqn.wixsite.com/my-site) - [Github](https://github.com/DalisaNguyen)
 * Brian L. - [Portfolio](https://brianlandaverde.weebly.com/) - [Github](https://github.com/BrianLan55)
-* Casey T. - [Portfolio] - [Github](https://github.com/CaseyTea)
+* Casey T. - [Portfolio](https://caseytea.github.io/) - [Github](https://github.com/CaseyTea)
 
 
 <br><br>
