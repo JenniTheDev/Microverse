@@ -32,7 +32,7 @@ Known in class as "Group F"
 <br><br>
 
 ## The Games <a name="Games"></a> <br>
-* Main Menu - FInd all the Microgames here
+* Main Menu - Find all the Microgames here
   - Swipe menu with descriptions for all games 
   <br>
  
